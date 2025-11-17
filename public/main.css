@@ -1,3 +1,52 @@
-.center { display: block; margin-left: auto; margin-right: auto; height: 50%; } 
-.button { font-size: 24px; padding: 10px 20px; margin: auto; display: inline-block; }
-.button_div { width: 50%; justify-content: center; margin-left: auto; margin-right: auto; }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;   /* ← disables scrollbars */
+  height: 100%;
+  width: 100%;
+}
+
+
+/* Center the image on the screen */
+.display_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ← Perfect centering */
+  height: 100vh;
+}
+
+/* Each button takes exactly 50% of screen width */
+.button {
+  width: 50%;          /* ← Half the screen */
+  height: 100vh;       /* ← Full height */
+  font-size: 24px;
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  border: none;
+}
+
+/* Container stretches full screen and puts buttons side-by-side */
+.center_div {
+  position: relative;
+  z-index: 10;         /* Buttons stay above the image */
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.user_id_input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ← Perfect centering */
+  font-size: 24px;
+  padding: 10px;
+}
+
+.user_id_button {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin-left: 10px;
+}

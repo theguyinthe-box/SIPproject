@@ -17,7 +17,7 @@ const port = 3000;
 app.use(express.static('public'));
 app.use(express.static('../shared'));
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/id_input.html');
 })
 
 app.listen(port, () => {
