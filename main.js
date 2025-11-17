@@ -49,7 +49,7 @@ app.post('/userID', (req, res) => {
 app.post('/userInput', (req, res) => {
   const { selection, filename } = req.body;
   writeSelection(this.userID, selection, filename)
-  deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
+  //deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
   res.json({ success: true, received: { selection, filename } });
 })
 

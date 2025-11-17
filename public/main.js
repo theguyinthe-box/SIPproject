@@ -2,17 +2,26 @@ let imageFilename = "";
 
 window.onload = function () {
     getRandomImage();
+    startSelectionCountdown();
 }
 
+let interval = null;
+let delta = 1;
+let timePerImage = 10; //seconds
+async function startSelectionCountdown(){
+    let timeLeft = timePerImage;
+    if (interval) clearInterval(interval);
+    interval = setInterval(() => {
+        timeLeft -= 1.0 * delta;
 
-// document.addEventListener('keydown', function (event) {
-//     if (event.key == 'ArrowLeft') {
-//         makeSelection("Altered");
-//     }
-//     else if (event.key == 'ArrowRight') {
-//         makeSelection("Original");
-//     }
-// });
+        if (timeLeft > 0) { //We want the user to see the zero first before moving on
+        } else {
+            console.log("Time's up!");
+            clearInterval(interval);
+            makeSelection("No Response");
+        }
+    }, 1000 * delta);
+}
 
 async function makeSelection(userSelection) {
     try {
@@ -27,6 +36,7 @@ async function makeSelection(userSelection) {
             })
         });
         await getRandomImage();
+        startSelectionCountdown();
         return response;
     } catch (error) {
         console.error('Error:', error);
