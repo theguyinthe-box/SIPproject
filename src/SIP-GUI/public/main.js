@@ -5,14 +5,14 @@ window.onload = function () {
 }
 
 
-document.addEventListener('keydown', function (event) {
-    if (event.key == 'ArrowLeft') {
-        alert('Left was pressed');
-    }
-    else if (event.key == 'ArrowRight') {
-        alert('Right was pressed');
-    }
-});
+// document.addEventListener('keydown', function (event) {
+//     if (event.key == 'ArrowLeft') {
+//         makeSelection("Altered");
+//     }
+//     else if (event.key == 'ArrowRight') {
+//         makeSelection("Original");
+//     }
+// });
 
 async function makeSelection(userSelection) {
     try {
@@ -36,15 +36,17 @@ async function makeSelection(userSelection) {
 }
 
 async function getRandomImage() {
+    const baseUrl = 'http://localhost:3000/randomImage';
+    const timestamp = new Date().getTime();
+    const uniqueUrl = `${baseUrl}?t=${timestamp}`;
     try {
-        const response = await fetch('http://localhost:3000/randomImage', {
+        const response = await fetch(uniqueUrl, {
             method: "GET",
         });
+        response.status === 404 && (() => { window.location.href = "/complete.html" })();
         imageFilename = response.headers.get('X-Image-Filename');
-        const baseUrl = response.url;
-        const timestamp = new Date().getTime();
-        const uniqueUrl = `${baseUrl}?t=${timestamp}`;
-        document.getElementById("rand_img").src = uniqueUrl;
+        const blob = await response.blob();
+        document.getElementById("rand_img").src = window.URL.createObjectURL(blob);
         
         return response;
     } catch (error) {
