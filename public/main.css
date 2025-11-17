@@ -36,17 +36,34 @@ html, body {
   height: 100vh;
 }
 
-.user_id_input {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* ← Perfect centering */
-  font-size: 24px;
-  padding: 10px;
+
+.center_wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;        /* horizontal centering */
+  height: 100vh;              /* fill screen so centering works */
+}
+
+.user_id_boxes {
+  display: flex;
+  gap: 50px;
+}
+
+.user_id_boxes input {
+  width: 150px;
+  height: 150px;
+  font-size: 100px;
+  text-align: center;
+  border: 3px solid grey;
+  outline: none;
 }
 
 .user_id_button {
-  font-size: 24px;
+  display: block;
+  align-self: center;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
   padding: 10px 20px;
-  margin-left: 10px;
 }
