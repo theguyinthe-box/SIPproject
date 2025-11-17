@@ -21,6 +21,8 @@ By examining this relationship, our study aims to provide novel insights into th
 
 7. Machremi, E., Bakirtzis, C., Karakasi, M.V., Boziki, M.K., Siokas, V., Aloizou, A.M., Dardiotis, E., & Grigoriadis, N. (2022). What scans see when patients see defects: neuroimaging findings in body dysmorphic disorder. J Integr Neurosci. 2, 45, doi: 10.31083/j.jin2102045. PMID: 35364633.
 
+8. Karras, T., Laine, S., Aittala, M., Hellsten, J., Lehtinen, J., & Aila, T. (2020). Analyzing and Improving the Image Quality of StyleGAN. NVIDIA. https://doi.org/10.48550/arXiv.1912.04958.
+
 The purpose of this study is to investigate the relationship between self-image perception and AI-assisted digital manipulation, building upon existing literature concerning Body Dysmorphic Disorder (BDD) and the impact of digital image manipulation.
 Participants will have a standardized facial photograph taken under controlled lighting and camera conditions. 
 Using a neural network, researchers will generate five subtle-to-moderate manipulated variants per image across seven different attributes (smile, attractiveness, hair, age, lips, nose, and weight). 
