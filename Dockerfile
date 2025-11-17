@@ -17,6 +17,6 @@ WORKDIR ~/src/SIP-GUI
 ## install gui dependencies
 RUN apt install nodejs npm
 
-ENTRYPOINT [ "~/src/scripts/entrypoint.sh" ]
+ENTRYPOINT [ "./src/scripts/entrypoint.sh" ]
 
 
