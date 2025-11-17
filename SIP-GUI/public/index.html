@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Could you tell that I am not a web developer :P -->
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title></title>
+  </head>
+  <body>
+    <img src="./test-imgs/0.png", class="center">
+    <div class="button_div">
+      <button id="altered" class="button">Altered</button>
+      <button id="not-altered" class="button">Not Altered</button>
+    </div>
+  </body>
+</html>
