@@ -4,6 +4,7 @@
     <!-- Could you tell that I am not a web developer :P -->
 
     <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
@@ -14,13 +15,13 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title></title>
   </head>
   <body>
-    <img src="./test-imgs/0.png", class="center">
-    <div class="button_div">
+    <div class="center_div">
       <button id="altered" class="button">Altered</button>
-      <button id="not-altered" class="button">Not Altered</button>
+      <img src="./test-imgs/0.png" class="display_img">
+      <button id="original" class="button">Original</button>
     </div>
+    
   </body>
 </html>
