@@ -7,16 +7,15 @@ COPY ./src ~/src
 WORKDIR ~/src
 
 ## install base dependencies
-RUN apt update \
-    && apt upgrade  \
-    && abpt install python3 python3-pip tensorflow
+RUN apt update -y \
+    && apt upgrade -y  \
+    && apt install -y python3 python3-pip \
+    && pip install -y tensorflow  
 
 WORKDIR ~/src/SIP-GUI
 
 ## install gui dependencies
 RUN apt install nodejs npm
-
-# copy necessary files and scripts    
 
 ENTRYPOINT [ "~/src/scripts/entrypoint.sh" ]
 
