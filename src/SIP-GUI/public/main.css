@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;   /* ← disables scrollbars */
+  /*overflow: hidden;*/   /* ← disables scrollbars */
   height: 100%;
   width: 100%;
 }
@@ -13,13 +13,13 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* ← Perfect centering */
-  height: 100vh;
+  height: 100%;
 }
 
 /* Each button takes exactly 50% of screen width */
 .button {
   width: 50%;          /* ← Half the screen */
-  height: 100vh;       /* ← Full height */
+  height: 100%;       /* ← Full height */
   font-size: 24px;
   display: flex;
   align-items: center; /* Center text vertically */
@@ -27,15 +27,23 @@ html, body {
   border: none;
 }
 
+.timer_bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 0%;
+  font-size: 10vh;
+}
+
 /* Container stretches full screen and puts buttons side-by-side */
 .center_div {
   position: relative;
   z-index: 10;         /* Buttons stay above the image */
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
-
 
 .center_wrap{
   display: flex;
