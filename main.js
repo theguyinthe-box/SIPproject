@@ -30,6 +30,11 @@ app.listen(port, () => {
 
 app.get('/randomImage', (req, res) => {
   let file = getImageFromTestData()
+  if (!file) {
+    res.status(404).send('<h1>No images found</h1>');
+    return;
+  }
+
   res.set('X-Image-Filename', path.basename(file));
   res.sendFile(file);
 })
@@ -44,6 +49,7 @@ app.post('/userID', (req, res) => {
 app.post('/userInput', (req, res) => {
   const { selection, filename } = req.body;
   writeSelection(this.userID, selection, filename)
+  deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
   res.json({ success: true, received: { selection, filename } });
 })
 
@@ -51,6 +57,7 @@ Array.prototype.random = function () { return this[Math.floor((Math.random() * t
 
 function getImageFromTestData() {
   const files = fs.readdirSync(path.resolve(__dirname, '..', 'shared', 'test'));
+  if(files.length === 0) return null;
   return path.resolve(__dirname, '..', 'shared', 'test', files.random());
 }
 
@@ -63,5 +70,18 @@ async function writeSelection(userID, userSelection, imageShown) {
     console.log("Writing : " + content)
   } catch(err){
     console.log(err);
+  }
+}
+
+async function deleteFileifExists(filePath) {
+  try {
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+      console.log(`Deleted file: ${filePath}`);
+    } else {
+      console.log(`File not found, nothing to delete: ${filePath}`);
+    }
+  } catch (err) {
+    console.error(`Error deleting file: ${filePath}`, err);
   }
 }
