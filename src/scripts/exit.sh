@@ -1,0 +1,1 @@
+rm ../shared/altered/* ../shared/Camera/* 
