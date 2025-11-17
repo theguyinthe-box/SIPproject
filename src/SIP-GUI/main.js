@@ -6,6 +6,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+let userID = null;
+
 //Needs:
 //User input for subject ID
 //Randomly select an image from test dataset
@@ -15,34 +17,51 @@ const port = 3000;
 //Record subject ID, image shown, and user selection to a local file
 
 app.use(express.static('public'));
-app.use(express.static('../shared'));
+app.use(express.static(path.resolve(__dirname + "/../shared")));
+app.use(express.json());
+
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/id_input.html');
+  res.sendFile(__dirname + '/public/id_input.html');
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`app listening on port ${port}`)
 })
 
-Array.prototype.random = function () {return this[Math.floor((Math.random()*this.length))];}
+app.get('/randomImage', (req, res) => {
+  let file = getImageFromTestData()
+  res.set('X-Image-Filename', path.basename(file));
+  res.sendFile(file);
+})
 
-function getImageFromTestData(){
-  fs.readdir(__dirname + '../shared/test', (err, files) => {
-    if (err) {
-      console.error('Could not list the directory.', err);
-    }
-    return files.random();
-  });
-  //We ran out of files so for now just return a static file
-  return 'test-image/0.png';
+app.post('/userID', (req, res) => {
+  const { userID } = req.body;
+  this.userID = userID;
+  console.log('Received User ID:', this.userID);
+  res.json({ success: true, received: userID });
+})
+
+app.post('/userInput', (req, res) => {
+  const { selection, filename } = req.body;
+  writeSelection(this.userID, selection, filename)
+  res.json({ success: true, received: { selection, filename } });
+})
+
+Array.prototype.random = function () { return this[Math.floor((Math.random() * this.length))]; }
+
+function getImageFromTestData() {
+  const files = fs.readdirSync(path.resolve(__dirname, '..', 'shared', 'test'));
+  return path.resolve(__dirname, '..', 'shared', 'test', files.random());
 }
 
-function writeSelection(userID, userSelection, imageShown){
+async function writeSelection(userID, userSelection, imageShown) {
   let content = userID + "," + imageShown + "," + userSelection + "\n";
-  fs.writeFile(__dirname + "../shared/results/" + userID + ".csv", content, { flag: 'a+' }, err => {
-    if (err) {
-      console.error(err);
-    } else { // file written successfully
-    }
-  });
+  console.log(path.resolve(__dirname, '..', 'shared', 'test'))
+  console.log(path.resolve(__dirname + "/../shared/results/", userID + ".csv"))
+  try{
+    fs.writeFileSync(path.resolve(__dirname + "/../shared/results/", userID + ".csv"), content, { flag: 'a' });
+    console.log("Writing : " + content)
+  } catch(err){
+    console.log(err);
+  }
 }
