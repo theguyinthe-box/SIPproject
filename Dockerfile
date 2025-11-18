@@ -15,7 +15,9 @@ RUN apt update -y \
 WORKDIR /src/SIP-GUI
 
 ## install gui dependencies
-RUN apt install -y nodejs npm
+RUN apt install -y curl unzip
+RUN curl -fsSL https://fnm.vercel.app/install | bash
+RUN ~/.local/share/fnm/fnm install 24
 
 WORKDIR /src
 
