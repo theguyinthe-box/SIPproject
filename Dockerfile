@@ -10,7 +10,7 @@ WORKDIR ~/src
 RUN apt update -y \
     && apt upgrade -y  \
     && apt install -y python3 python3-pip \
-    && pip install -y tensorflow  
+    && pip install tensorflow  
 
 WORKDIR ~/src/SIP-GUI
 
