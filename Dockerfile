@@ -15,7 +15,7 @@ RUN apt update -y \
 WORKDIR ~/src/SIP-GUI
 
 ## install gui dependencies
-RUN apt install nodejs npm
+RUN apt install -y nodejs npm
 
 WORKDIR ~/src
 
