@@ -2,22 +2,22 @@ FROM ubuntu:22.04
 
 ##file structure setup
 
-COPY ./src ~/src
+COPY ./src /src
 
-WORKDIR ~/src
+WORKDIR /src
 
 ## install base dependencies
 RUN apt update -y \
     && apt upgrade -y  \
-    && apt install -y python3 python3-pip \
-    && pip install tensorflow  
+    && apt install -y python3 python3-pip build-essential cmake \
+    && pip install tensorflow face-recognition
 
-WORKDIR ~/src/SIP-GUI
+WORKDIR /src/SIP-GUI
 
 ## install gui dependencies
 RUN apt install -y nodejs npm
 
-WORKDIR ~/src
+WORKDIR /src
 
 ENTRYPOINT [ "./scripts/entrypoint.sh" ]
 CMD ["bash"]

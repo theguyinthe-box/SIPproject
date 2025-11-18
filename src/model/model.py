@@ -17,6 +17,7 @@ import random
 import losses
 from net import *
 import numpy as np
+import torch
 
 
 class DLatent(nn.Module):
