@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="center_wrap">
-      <h1>Please Enter your 4 digit User ID</h1>
+      <h1>Please Enter your 4 digit Subject ID</h1>
       <h1></h1>
 
       <div id="user_id_container" class="user_id_boxes">
@@ -66,16 +66,16 @@ if(evt.key === "Backspace") {
 }
 
 function submitID() {
-  const userID = getUserID();
-  if (!userID) return;
+  const subjectID = getsubjectID();
+  if (!subjectID) return;
 
   // Send POST request to local Express server
-  fetch('http://localhost:3000/userID', {
+  fetch('http://localhost/subjectID', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ userID }) // send object { userID: '1234' }
+    body: JSON.stringify({ subjectID }) // send object { subjectID: '1234' }
   })
   .then(response => response.json())
   .then(data => {
@@ -89,15 +89,15 @@ function submitID() {
 }
 
 
-function getUserID() {
+function getsubjectID() {
   const container = document.getElementById('user_id_container');
   const boxes = container.children;
 
   // Combine the values of all 4 boxes
-  let userID = Array.from(boxes).map(b => b.value).join('');
+  let subjectID = Array.from(boxes).map(b => b.value).join('');
 
-  if(userID.length === boxes.length) {
-    return userID;
+  if(subjectID.length === boxes.length) {
+    return subjectID;
   } else {
     alert("Please fill all 4 digits!");
     return null;

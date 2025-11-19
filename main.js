@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-let userID = null;
+let subjectID = null;
 
 //Needs:
 //User input for subject ID
@@ -39,17 +39,17 @@ app.get('/randomImage', (req, res) => {
   res.sendFile(file);
 })
 
-app.post('/userID', (req, res) => {
-  const { userID } = req.body;
-  this.userID = userID;
-  console.log('Received User ID:', this.userID);
-  res.json({ success: true, received: userID });
+app.post('/subjectID', (req, res) => {
+  const { subjectID } = req.body;
+  this.subjectID = subjectID;
+  console.log('Received User ID:', this.subjectID);
+  res.json({ success: true, received: subjectID });
 })
 
 app.post('/userInput', (req, res) => {
   const { selection, filename } = req.body;
-  writeSelection(this.userID, selection, filename)
-  //deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
+  writeSelection(this.subjectID, selection, filename)
+  deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
   res.json({ success: true, received: { selection, filename } });
 })
 
@@ -61,12 +61,12 @@ function getImageFromTestData() {
   return path.resolve(__dirname, '..', 'shared', 'test', files.random());
 }
 
-async function writeSelection(userID, userSelection, imageShown) {
-  let content = userID + "," + imageShown + "," + userSelection + "\n";
+async function writeSelection(subjectID, userSelection, imageShown) {
+  let content = subjectID + "," + imageShown + "," + userSelection + "\n";
   console.log(path.resolve(__dirname, '..', 'shared', 'test'))
-  console.log(path.resolve(__dirname + "/../shared/results/", userID + ".csv"))
+  console.log(path.resolve(__dirname + "/../shared/results/", subjectID + ".csv"))
   try{
-    fs.writeFileSync(path.resolve(__dirname + "/../shared/results/", userID + ".csv"), content, { flag: 'a' });
+    fs.writeFileSync(path.resolve(__dirname + "/../shared/results/", subjectID + ".csv"), content, { flag: 'a' });
     console.log("Writing : " + content)
   } catch(err){
     console.log(err);

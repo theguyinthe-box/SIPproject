@@ -25,7 +25,7 @@ async function startSelectionCountdown(){
 
 async function makeSelection(userSelection) {
     try {
-        const response = await fetch('http://localhost:3000/userInput', {
+        const response = await fetch('http://localhost/userInput', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ async function makeSelection(userSelection) {
 }
 
 async function getRandomImage() {
-    const baseUrl = 'http://localhost:3000/randomImage';
+    const baseUrl = 'http://localhost/randomImage';
     const timestamp = new Date().getTime();
     const uniqueUrl = `${baseUrl}?t=${timestamp}`;
     try {
