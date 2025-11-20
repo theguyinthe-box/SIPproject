@@ -12,14 +12,9 @@ RUN apt update -y \
     && apt install -y python3 python3-pip build-essential cmake \
     && pip install tensorflow face-recognition
 
-WORKDIR /src/SIP-GUI
 
 ## install gui dependencies
-RUN apt install -y curl unzip
-RUN curl -fsSL https://fnm.vercel.app/install | bash
-RUN ~/.local/share/fnm/fnm install 24
-
-WORKDIR /src
+RUN sh src/scripts/install_gui_dependencies.sh
 
 ENTRYPOINT [ "./scripts/entrypoint.sh" ]
 CMD ["bash"]
