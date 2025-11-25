@@ -3,12 +3,10 @@ import PIL.Image
 from ffhq_dataset.face_alignment import image_align
 from ffhq_dataset.landmarks_detector import LandmarksDetector
 
-RAW_IMG_PATH = "../shared"
+RAW_IMG_PATH = "../shared/raw"
 ALIGNED_IMG_PATH = "../shared/aligned"
 VECTOR_PATH = '../shared/alignment_vector'
 VALID_IMG_EXT = (".jpg",".png")
-
-
 
 def load_raw():
     for f in os.listdir(RAW_IMG_PATH):
@@ -23,7 +21,7 @@ def load_aligned():
     return img
 
 def align_image():
-    landmarks_model_path = './shape_predictor_68_face_landmarks.dat.bz2'
+    landmarks_model_path = './shape_predictor_81_face_landmarks.dat'
     landmarks_detector = LandmarksDetector(landmarks_model_path)
     for img_name in [x for x in os.listdir(RAW_IMG_PATH) if x[0] not in '._']:
         raw_img_path = os.path.join(RAW_IMG_PATH, img_name)
