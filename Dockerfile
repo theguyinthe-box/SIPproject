@@ -9,12 +9,15 @@ WORKDIR /src
 ## install base dependencies
 RUN apt update -y \
     && apt upgrade -y  \
-    && apt install -y python3 python3-pip build-essential cmake \
+    && apt install -y python3 python3-pip build-essential cmake wget \
     && pip install tensorflow face-recognition
 
+## download models
+RUN sh scripts/download_models.sh
 
 ## install gui dependencies
-RUN sh src/scripts/install_gui_dependencies.sh
+RUN sh scripts/install_gui_dependencies.sh
+
 
 ENTRYPOINT [ "./scripts/entrypoint.sh" ]
 CMD ["bash"]
