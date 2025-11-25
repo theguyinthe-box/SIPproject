@@ -1,28 +1,21 @@
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
-
+import torch
 from model import Model
 from launcher import run
 from checkpointer import Checkpointer
 import lreq
-import loggin
+import logging
 import bz2
-from keras.utils import get_file
 
+indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
+W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
 
-def alter(gender, smile, attract, hair, age, lips, nose, fat, glasses,input_latent):
+def alter(alteration_vector, input_latent, W):
 
     altered = input_latent.detach().clone()
     
-    altered += gender *  W[0]
-    altered += smile *   W[1]
-    altered += attract * W[2]
-    altered += hair *    W[3]
-    altered -= age *     W[4]
-    altered += lips *    W[5]
-    altered += nose *    W[6]
-    altered += fat *     W[7]
-    altered += glasses * W[8]
+    altered += alteration_vector * W
     
     im = convert_to_image(altered)
     
