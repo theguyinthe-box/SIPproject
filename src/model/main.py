@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import torch
 from checkpointer import Checkpointer
 from defaults import get_cfg_defaults
 from model import Model
@@ -35,11 +36,11 @@ def __main__():
     
     model.requires_grad_(False)
 
-    decoder = model.decoder()
-    encoder = model.encoder()
-    mapping_tl = model.mapping_d()
-    mapping_fl = model.mapping_f()
-    dlatent_avg = model.dlatent_avg()
+    decoder = model.decoder
+    encoder = model.encoder
+    mapping_tl = model.mapping_d
+    mapping_fl = model.mapping_f
+    dlatent_avg = model.dlatent_avg
 
     arguments = dict()
     arguments["iteration"] = 0
@@ -66,4 +67,4 @@ def __main__():
     paths.sort()
     paths_backup = paths[:]    
 
-    W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
+    

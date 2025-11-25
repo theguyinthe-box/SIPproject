@@ -10,7 +10,8 @@ import bz2
 from keras.utils import get_file
 
 
-def alter(gender, smile, attract, hair, age, lips, nose, fat, glasses):
+def alter(gender, smile, attract, hair, age, lips, nose, fat, glasses,input_latent):
+
     altered = input_latent.detach().clone()
     
     altered += gender *  W[0]
@@ -77,6 +78,7 @@ def alter(gender, smile, attract, hair, age, lips, nose, fat, glasses):
     background = Image.open(src_file).convert("RGB")
 
     foreground = img
+    
     mask = Image.open(mask_file).convert("L").resize(foreground.size).filter(ImageFilter.GaussianBlur(20))
     
     foreground = foreground.transform(background.size, PIL.Image.AFFINE, transform_inv.flatten()[:6], resample=Image.NEAREST)    
