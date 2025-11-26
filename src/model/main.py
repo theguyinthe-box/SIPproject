@@ -13,7 +13,6 @@ from defaults import get_cfg_defaults
 from model import Model
 from imageHandler import align_image
 from alter_images import alter
-
 import sys
 
 RAW_IMG_DIR = '../shared/Camera'
@@ -23,9 +22,6 @@ IMG_VECTOR_DIR = '../shared/alignmentVector'
 TEST_IMG_DIR = '../shared/test'
 
 def sample(cfg, logger):
-    
-    #instantiate model
-    cfg = get_cfg_defaults()
 
     torch.cuda.set_device(0)
 
@@ -74,7 +70,7 @@ def sample(cfg, logger):
                             logger=logger,
                             save=False)
 
-    checkpointer.load(file_name="./training_artifacts/model_submitted.pth")
+    _ = checkpointer.load()
 
     model.eval()
     
@@ -126,15 +122,14 @@ def sample(cfg, logger):
     
     indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
     W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
-    alteration_vec = [0. for i in indices]
+    alteration_vec = [1. for i in indices]
 
     #align raw image and get vector 
     align_image()
 
     path = ALIGNED_IMG_DIR + "/image_01.png"
-    
-    latents, latents_original, _ = load(W, alteration_vec,path) 
 
+    latents, latents_original, _ = load(W, alteration_vec, path) 
     new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
     im = update_image(new_latents,latents_original)
     altered_img = Image.fromarray(im.numpy())

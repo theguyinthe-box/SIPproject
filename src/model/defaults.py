@@ -21,7 +21,7 @@ _C = CN()
 _C.NAME = ""
 _C.PPL_CELEBA_ADJUSTMENT = False
 #_C.OUTPUT_DIR = "results"
-_C.OUTPUT_DIR = "training_artifacts/"
+_C.OUTPUT_DIR = "training_artifacts/ffhq/"
 
 _C.DATASET = CN()
 _C.DATASET.PATH = 'celeba/data_fold_%d_lod_%d.pkl'
