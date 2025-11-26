@@ -3,7 +3,7 @@ import PIL.Image
 from ffhq_dataset.face_alignment import image_align
 from ffhq_dataset.landmarks_detector import LandmarksDetector
 
-RAW_IMG_PATH = "../shared/raw"
+RAW_IMG_PATH = "../shared/Camera"
 ALIGNED_IMG_PATH = "../shared/aligned"
 VECTOR_PATH = '../shared/alignment_vector'
 VALID_IMG_EXT = (".jpg",".png")

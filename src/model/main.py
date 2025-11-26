@@ -1,4 +1,3 @@
-
 import torch.utils.data
 from net import *
 from model import Model
@@ -25,6 +24,8 @@ TEST_IMG_DIR = '../shared/test'
 
 def sample(cfg, logger):
     #define helper functions
+    indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
+    W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
 
     #instantiate model
     cfg = get_cfg_defaults()
@@ -79,21 +80,21 @@ def sample(cfg, logger):
     extra_checkpoint_data = checkpointer.load()
     #set model to evaluation mode
     model.eval()
-    print(f"model instant")
+    
     #align raw image and get vector 
     align_image()
-    print(f"images aligned")
+    
     layer_count = cfg.MODEL.LAYER_COUNT
     
-    def encode(x,model):
+    def encode(x):
         Z, _ = model.encode(x, layer_count-1, 1)
         Z = Z.repeat(1, model.mapping_f.num_layers, 1)
         return Z
 
-    def decode(x,model):
+    def decode(x):
         return model.decoder(x, layer_count-1, 1, noise = True)
     
-    def load(W,path, model):
+    def load(W, alter_vec, path):
         img = np.asarray(Image.open(path))
         if img.shape[2] == 4:
             img = img[:, :, :3]
@@ -107,34 +108,37 @@ def sample(cfg, logger):
         if x.shape[2] != needed_resolution:
             x = F.adaptive_avg_pool2d(x, (needed_resolution, needed_resolution))
         img_src = ((x * 0.5 + 0.5) * 255).type(torch.long).clamp(0, 255).cpu().type(torch.float32).transpose(0, 2).transpose(0, 1).numpy()
-        latents_original = encode(x[None, ...],model)
+        latents_original = encode(x[None, ...])
         latents = latents_original[0, 0].clone()
         latents -= model.dlatent_avg.buff.data[0]
+        for v, w in zip(alter_vec, W):
+            v = (latents * w).sum()
+        for v, w in zip(alter_vec, W):
+            latents = latents - v * w
         return latents, latents_original, img_src
-    
-    # def update_image(w, latents_original, model):
-    #     with torch.no_grad():
-    #         w = w + model.dlatent_avg.buff.data[0]
-    #         w = w[None, None, ...].repeat(1, model.mapping_f.num_layers, 1)
-    #         layer_idx = torch.arange(model.mapping_f.num_layers)[np.newaxis, :, np.newaxis]
-    #         cur_layers = (7 + 1) * 2
-    #         mixing_cutoff = cur_layers
-    #         styles = torch.where(layer_idx < mixing_cutoff, w, latents_original)
-    #         x_rec = decode(styles, model)
-    #         resultsample = ((x_rec * 0.5 + 0.5) * 255).type(torch.long).clamp(0, 255)
-    #         resultsample = resultsample.cpu()[0, :, :, :]
-    #     return resultsample.type(torch.uint8).transpose(0, 2).transpose(0, 1)
 
-    indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
+    def update_image(w, latents_original):
+        with torch.no_grad():
+            w = w + model.dlatent_avg.buff.data[0]
+            w = w[None, None, ...].repeat(1, model.mapping_f.num_layers, 1)
 
-    W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
+            layer_idx = torch.arange(model.mapping_f.num_layers)[np.newaxis, :, np.newaxis]
+            cur_layers = (7 + 1) * 2
+            mixing_cutoff = cur_layers
+            styles = torch.where(layer_idx < mixing_cutoff, w, latents_original)
+            x_rec = decode(styles)
+            resultsample = ((x_rec * 0.5 + 0.5) * 255).type(torch.long).clamp(0, 255)
+            resultsample = resultsample.cpu()[0, :, :, :]
+            return resultsample.type(torch.uint8).transpose(0, 2).transpose(0, 1)
+
+    alteration_vec = [0. for i in indices]
 
     path = ALIGNED_IMG_DIR + "/image_01.png"
-    print('image aligned')
-    latent, latent_original, img_src = load(W,path,model)   
-    print(f"images loaded")
-    alteration_vec = torch.zeros(len(W))
-    im = alter(W, alteration_vec, latent_original)
+    latents, latents_original, img_src = load(W, alteration_vec,path) 
+
+    new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
+
+    im = update_image(new_latents,latents_original)
     altered_img = Image.fromarray(im.numpy())
     altered_img.save(ALTERED_IMG_DIR + "/altered_image01.jpg")
     print(f"end of main")
