@@ -23,10 +23,7 @@ IMG_VECTOR_DIR = '../shared/alignmentVector'
 TEST_IMG_DIR = '../shared/test'
 
 def sample(cfg, logger):
-    #define helper functions
-    indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
-    W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
-
+    
     #instantiate model
     cfg = get_cfg_defaults()
 
@@ -77,12 +74,9 @@ def sample(cfg, logger):
                             logger=logger,
                             save=False)
 
-    extra_checkpoint_data = checkpointer.load()
-    #set model to evaluation mode
+    checkpointer.load()
+
     model.eval()
-    
-    #align raw image and get vector 
-    align_image()
     
     layer_count = cfg.MODEL.LAYER_COUNT
     
@@ -121,7 +115,6 @@ def sample(cfg, logger):
         with torch.no_grad():
             w = w + model.dlatent_avg.buff.data[0]
             w = w[None, None, ...].repeat(1, model.mapping_f.num_layers, 1)
-
             layer_idx = torch.arange(model.mapping_f.num_layers)[np.newaxis, :, np.newaxis]
             cur_layers = (7 + 1) * 2
             mixing_cutoff = cur_layers
@@ -130,17 +123,23 @@ def sample(cfg, logger):
             resultsample = ((x_rec * 0.5 + 0.5) * 255).type(torch.long).clamp(0, 255)
             resultsample = resultsample.cpu()[0, :, :, :]
             return resultsample.type(torch.uint8).transpose(0, 2).transpose(0, 1)
-
+    
+    indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
+    W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
     alteration_vec = [0. for i in indices]
 
+    #align raw image and get vector 
+    align_image()
+
     path = ALIGNED_IMG_DIR + "/image_01.png"
-    latents, latents_original, img_src = load(W, alteration_vec,path) 
+    
+    latents, latents_original, _ = load(W, alteration_vec,path) 
 
     new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
-
     im = update_image(new_latents,latents_original)
     altered_img = Image.fromarray(im.numpy())
     altered_img.save(ALTERED_IMG_DIR + "/altered_image01.jpg")
+    
     print(f"end of main")
 
 if __name__ == "__main__":

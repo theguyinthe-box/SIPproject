@@ -10,7 +10,7 @@ DATASET:
   PART_COUNT_TEST: 2
   PATH_TEST: /data/datasets/ffhq-dataset_new/tfrecords/ffhq-test/splitted/ffhq-r%02d.tfrecords.%03d
 
-  SAMPLES_PATH: dataset_samples/faces/realign1024x1024
+  SAMPLES_PATH: ../shared/aligned
   STYLE_MIX_PATH: style_mixing/test_images/set_ffhq
 
   MAX_RESOLUTION_LEVEL: 10
@@ -21,7 +21,7 @@ MODEL:
   START_CHANNEL_COUNT: 16
   DLATENT_AVG_BETA: 0.995
   MAPPING_LAYERS: 8
-OUTPUT_DIR: training_artifacts/ffhq
+OUTPUT_DIR: training_artifacts/
 TRAIN:
   BASE_LEARNING_RATE: 0.002
   EPOCHS_PER_LOD: 16

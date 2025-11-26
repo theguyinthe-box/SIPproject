@@ -1,21 +1,12 @@
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 import torch
-from model import Model
-from launcher import run
-from checkpointer import Checkpointer
-import lreq
-import logging
-import bz2
 
-indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
-W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
 
 def convert_to_image(latent_vector):
     x_rec = decode(latent_vector.detach())
     resultsample = ((x_rec * 0.5 + 0.5) * 255).type(torch.long).clamp(0, 255)
     resultsample = resultsample.cpu()[0, :, :, :]
-    
     return (resultsample.type(torch.uint8).transpose(0, 2).transpose(0, 1))
 
 def alter(W, alteration_vector, input_latent):
