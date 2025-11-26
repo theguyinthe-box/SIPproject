@@ -13,7 +13,7 @@ from defaults import get_cfg_defaults
 from model import Model
 from imageHandler import align_image
 from alter_images import alter
-import sys
+
 
 RAW_IMG_DIR = '../shared/Camera'
 ALIGNED_IMG_DIR = '../shared/aligned'
@@ -119,21 +119,28 @@ def sample(cfg, logger):
             resultsample = ((x_rec * 0.5 + 0.5) * 255).type(torch.long).clamp(0, 255)
             resultsample = resultsample.cpu()[0, :, :, :]
             return resultsample.type(torch.uint8).transpose(0, 2).transpose(0, 1)
+
+
     
-    indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
+    indices = [1, 2, 4, 10, 11, 17]
     W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
-    alteration_vec = [.01 for i in indices]
+    alteration_vec = [0. for i in indices]
 
     #align raw image and get vector 
     align_image()
 
-    path = ALIGNED_IMG_DIR + "/image_01.png"
 
-    latents, latents_original, _ = load(W, alteration_vec, path) 
-    new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
-    im = update_image(new_latents,latents_original)
-    altered_img = Image.fromarray(im.numpy())
-    altered_img.save(ALTERED_IMG_DIR + "/altered_image01.jpg")
+    path = ALIGNED_IMG_DIR + "/image_01.png"
+    
+    # Load initial latents for reference
+    latents, latents_original, _ = load(W, alteration_vec, path)
+    for ii in range(len(alteration_vec)*6):
+        alteration_vec[ii%5] = 0.5 * np.random.rand()
+        new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
+        im = update_image(new_latents, latents_original)
+        altered_img = Image.fromarray(im.numpy())
+        altered_img.save(ALTERED_IMG_DIR + f"/altered_image{ii}.jpg")
+        alteration_vec = [0. for i in indices]
     
     print(f"end of main")
 
