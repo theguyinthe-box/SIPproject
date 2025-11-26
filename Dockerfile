@@ -15,6 +15,8 @@ RUN apt update -y \
 ## download models
 RUN sh scripts/download_models.sh
 
+RUN pip install -r requirements.txt
+
 ## install gui dependencies
 RUN sh scripts/install_gui_dependencies.sh
 

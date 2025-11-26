@@ -142,3 +142,4 @@ vite.config.ts.timestamp-*
 
 *.pth
 src/model/checkpoints
+

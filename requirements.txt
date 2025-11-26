@@ -11,3 +11,4 @@ torchvision
 scikit-learn
 yacs
 matplotlib
+face-recognition

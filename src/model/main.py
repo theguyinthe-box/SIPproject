@@ -135,7 +135,7 @@ def sample(cfg, logger):
     # Load initial latents for reference
     latents, latents_original, _ = load(W, alteration_vec, path)
     for ii in range(len(alteration_vec)*6):
-        alteration_vec[ii%5] = 0.5 * np.random.rand()
+        alteration_vec[ii%5] = np.random.rand()
         new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
         im = update_image(new_latents, latents_original)
         altered_img = Image.fromarray(im.numpy())
