@@ -74,7 +74,7 @@ def sample(cfg, logger):
                             logger=logger,
                             save=False)
 
-    checkpointer.load()
+    checkpointer.load(file_name="./training_artifacts/model_submitted.pth")
 
     model.eval()
     
