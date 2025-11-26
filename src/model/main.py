@@ -122,7 +122,7 @@ def sample(cfg, logger):
     
     indices = [0, 1, 2, 3, 4, 10, 11, 17, 19]
     W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
-    alteration_vec = [1. for i in indices]
+    alteration_vec = [.01 for i in indices]
 
     #align raw image and get vector 
     align_image()

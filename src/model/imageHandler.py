@@ -8,18 +8,6 @@ ALIGNED_IMG_PATH = "../shared/aligned"
 VECTOR_PATH = '../shared/alignment_vector'
 VALID_IMG_EXT = (".jpg",".png")
 
-def load_raw():
-    for f in os.listdir(RAW_IMG_PATH):
-        if f.endswith(VALID_IMG_EXT):
-            img = PIL.Image.open(RAW_IMG_PATH + f)
-    return img
-
-def load_aligned():
-    for f in os.listdir(ALIGNED_IMG_PATH):
-        if f.endswith(VALID_IMG_EXT):
-            img = PIL.Image.open(ALIGNED_IMG_PATH + f)
-    return img
-
 def align_image():
     landmarks_model_path = './shape_predictor_81_face_landmarks.dat'
     landmarks_detector = LandmarksDetector(landmarks_model_path)
