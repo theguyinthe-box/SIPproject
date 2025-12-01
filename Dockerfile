@@ -7,7 +7,7 @@ COPY ./src /src
 WORKDIR /src
 
 ## setup adb keys
-RUN mkdir -p ~/.android/ && cp /src/adbkey* ~/.android/
+RUN mkdir -p ~/.android/ && mv /src/adbkey* ~/.android/
 
 ## install base dependencies
 RUN apt update -y \
