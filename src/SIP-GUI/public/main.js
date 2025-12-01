@@ -7,7 +7,7 @@ window.onload = function () {
 
 let interval = null;
 let delta = 1;
-let timePerImage = 10; //seconds
+let timePerImage = 5; //seconds
 async function startSelectionCountdown(){
     let timeLeft = timePerImage;
     if (interval) clearInterval(interval);
@@ -25,7 +25,7 @@ async function startSelectionCountdown(){
 
 async function makeSelection(userSelection) {
     try {
-        const response = await fetch('http://localhost/userInput', {
+        const response = await fetch('/userInput', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -46,14 +46,14 @@ async function makeSelection(userSelection) {
 }
 
 async function getRandomImage() {
-    const baseUrl = 'http://localhost/randomImage';
+    const baseUrl = '/randomImage';
     const timestamp = new Date().getTime();
     const uniqueUrl = `${baseUrl}?t=${timestamp}`;
     try {
         const response = await fetch(uniqueUrl, {
             method: "GET",
         });
-        response.status === 404 && (() => { window.location.href = "/complete.html" })();
+        response.status === 404 && (() => { window.location.href = "complete.html" })();
         imageFilename = response.headers.get('X-Image-Filename');
         const blob = await response.blob();
         document.getElementById("rand_img").src = window.URL.createObjectURL(blob);

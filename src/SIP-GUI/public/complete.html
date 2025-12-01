@@ -10,13 +10,23 @@
 <body>
   <div class="center_wrap">
     <H1 style="font-size: 200px;">Completed</H1>
-    <button onclick="window.location.href = '/'">return to start</button>
+    <button onclick="window.location.href = '/'" title="Click this after you run startTheShow again">Return to Start</button>
   </div>
 
 </body>
 
 <script>
+window.onload = function () {
+  closeApp();
+}
 
+function closeApp() {
+    fetch('/closeApp')
+        .then(response => {})
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
 </script>
 
 </html>
