@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/id_input.html');
 })
 
-app.listen(port, () => {
+let server = app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
 
@@ -37,6 +37,13 @@ app.get('/randomImage', (req, res) => {
 
   res.set('X-Image-Filename', path.basename(file));
   res.sendFile(file);
+})
+
+app.get('/closeApp', (req, res) => {
+  console.log("Closing App as per user request.");
+  server.close();
+  res.json({ success: true });
+  process.exit(0);
 })
 
 app.post('/subjectID', (req, res) => {

@@ -70,7 +70,7 @@ function submitID() {
   if (!subjectID) return;
 
   // Send POST request to local Express server
-  fetch('http://localhost/subjectID', {
+  fetch('/subjectID', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ function submitID() {
   .then(response => response.json())
   .then(data => {
     console.log('Server response:', data);
-    window.location.href = "/image_check.html";
+    window.location.href = "image_check.html";
   })
   .catch(error => {
     console.error('Error:', error);
