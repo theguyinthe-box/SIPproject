@@ -1,4 +1,3 @@
-@echo off
 echo Killing adb
 pkill adb
 echo Starting Program ...

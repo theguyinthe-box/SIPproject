@@ -26,7 +26,6 @@ RUN pip install -r requirements.txt
 RUN sh scripts/install_gui_dependencies.sh
 
 ## setup adb keys
-#RUN mkdir -p ~/.android/ && cp /src/adbkey* ~/.android/.
+RUN mkdir -p ~/.android/ && cp /src/adbkey* /root/.android/.
 
-
-CMD [ "./scripts/entrypoint.sh" ]
+ENTRYPOINT [ "./scripts/entrypoint.sh" ]

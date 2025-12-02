@@ -13,7 +13,7 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* ← Perfect centering */
-  height: 100%;
+  width: 25%;
 }
 
 /* Each button takes exactly 50% of screen width */
