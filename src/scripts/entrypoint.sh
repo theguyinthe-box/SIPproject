@@ -24,4 +24,4 @@ rm $SRC_DIR/shared/aligned/*
 rm $SRC_DIR/shared/alignment_vector/*
 
 # run the GUI
-node /src/SIP-GUI/main.js
+#node /src/SIP-GUI/main.js
