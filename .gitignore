@@ -143,3 +143,5 @@ vite.config.ts.timestamp-*
 *.pth
 src/model/checkpoints
 adbkey*
+.pyc
+__pycache__

@@ -7,6 +7,7 @@ from dlutils.pytorch import count_parameters
 from defaults import get_cfg_defaults
 import lreq
 import numpy as np
+import paths
 
 from PIL import Image
 from defaults import get_cfg_defaults
@@ -14,13 +15,6 @@ from model import Model
 from imageHandler import align_image
 from alter_images import alter
 from glob import glob
-
-
-RAW_IMG_DIR = '/src/shared/Camera'
-ALIGNED_IMG_DIR = '/src/shared/aligned'
-ALTERED_IMG_DIR = '/src/shared/altered'
-IMG_VECTOR_DIR = '/src/shared/alignmentVector'
-TEST_IMG_DIR = '/src/shared/test'
 
 def sample(cfg, logger):
 
@@ -71,7 +65,8 @@ def sample(cfg, logger):
                             logger=logger,
                             save=False)
 
-    _ = checkpointer.load()
+    _ = checkpointer.load(False, paths.MODEL_DIR)
+    #_ = checkpointer.load()
 
     model.eval()
     
@@ -124,14 +119,15 @@ def sample(cfg, logger):
 
     
     indices = [1, 2, 4, 10, 11, 17]
-    W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
+    W = [torch.tensor(np.load(paths.PRINCIPAL_DIRECTIONS + "/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
+    #W = [torch.tensor(np.load("principal_directions/direction_%d.npy" % i), dtype=torch.float32) for i in indices]
     alteration_vec = [0. for i in indices]
 
     #align raw image and get vector 
     align_image()
 
 
-    path = glob.glob(ALIGNED_IMG_DIR + "*")[0]; #There should be only one file here anyways
+    path = glob(paths.ALIGNED_IMG_DIR + "/*")[0]; #There should be only one file here anyways
     
     # Load initial latents for reference
     latents, latents_original, _ = load(W, alteration_vec, path)
@@ -140,7 +136,7 @@ def sample(cfg, logger):
         new_latents = latents + sum([v * w for v, w in zip(alteration_vec, W)])
         im = update_image(new_latents, latents_original)
         altered_img = Image.fromarray(im.numpy())
-        altered_img.save(ALTERED_IMG_DIR + f"/altered_image{ii}.jpg")
+        altered_img.save(paths.ALTERED_IMG_DIR + f"/altered_image{ii}.jpg")
         alteration_vec = [0. for i in indices]
     
     print(f"end of main")
