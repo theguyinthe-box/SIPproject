@@ -16,12 +16,17 @@ let subjectID = null;
 //File name is SubjectID.csv
 //Record subject ID, image shown, and user selection to a local file
 
-app.use(express.static('public'));
-app.use(express.static(path.resolve(__dirname + "/../shared")));
+const publicDir = path.resolve(__dirname, 'public');
+const sharedDir = path.resolve(__dirname, '..', 'shared');
+
+app.use(express.static(publicDir));
+//app.use(express.static(sharedDir));
+
+console.log('Serving static files from:', publicDir);
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/id_input.html');
+  res.sendFile(path.resolve(publicDir, 'id_input.html'));
 })
 
 let server = app.listen(port, () => {
@@ -63,19 +68,18 @@ app.post('/userInput', (req, res) => {
 Array.prototype.random = function () { return this[Math.floor((Math.random() * this.length))]; }
 
 function getImageFromTestData() {
-  const files = fs.readdirSync(path.resolve(__dirname, '..', 'shared', 'test'));
-  if(files.length === 0) return null;
+  let files = fs.readdirSync(path.resolve(__dirname, '..', 'shared', 'test'));
+  files = files.filter(f => !f.startsWith('.'));
+  if (files.length === 0) return null;
   return path.resolve(__dirname, '..', 'shared', 'test', files.random());
 }
 
 async function writeSelection(subjectID, userSelection, imageShown) {
   let content = subjectID + "," + imageShown + "," + userSelection + "\n";
-  console.log(path.resolve(__dirname, '..', 'shared', 'test'))
-  console.log(path.resolve(__dirname + "/../shared/results/", subjectID + ".csv"))
-  try{
+  try {
     fs.writeFileSync(path.resolve(__dirname + "/../shared/results/", subjectID + ".csv"), content, { flag: 'a' });
     console.log("Writing : " + content)
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 }
