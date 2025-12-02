@@ -13,13 +13,14 @@ from defaults import get_cfg_defaults
 from model import Model
 from imageHandler import align_image
 from alter_images import alter
+from glob import glob
 
 
-RAW_IMG_DIR = '../shared/Camera'
-ALIGNED_IMG_DIR = '../shared/aligned'
-ALTERED_IMG_DIR = '../shared/altered'
-IMG_VECTOR_DIR = '../shared/alignmentVector'
-TEST_IMG_DIR = '../shared/test'
+RAW_IMG_DIR = '/src/shared/Camera'
+ALIGNED_IMG_DIR = '/src/shared/aligned'
+ALTERED_IMG_DIR = '/src/shared/altered'
+IMG_VECTOR_DIR = '/src/shared/alignmentVector'
+TEST_IMG_DIR = '/src/shared/test'
 
 def sample(cfg, logger):
 
@@ -130,7 +131,7 @@ def sample(cfg, logger):
     align_image()
 
 
-    path = ALIGNED_IMG_DIR + "/image_01.png"
+    path = glob.glob(ALIGNED_IMG_DIR + "*")[0]; #There should be only one file here anyways
     
     # Load initial latents for reference
     latents, latents_original, _ = load(W, alteration_vec, path)
