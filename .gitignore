@@ -145,3 +145,5 @@ src/model/checkpoints
 adbkey*
 .pyc
 __pycache__
+src/shared/*/*.png
+src/shared/*/*.jpg
