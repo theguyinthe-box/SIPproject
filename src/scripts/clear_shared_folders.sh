@@ -1,6 +1,5 @@
-rm /src/shared/Camera/*
-rm /src/shared/aligned/*
-rm /src/shared/alignment_vector/*
-rm /src/shared/altered/*
-rm /src/shared/results/*
-rm /src/shared/test/*
+rm -f ./src/shared/Camera/*
+rm -f ./src/shared/aligned/*
+rm -f ./src/shared/alignment_vector/*
+rm -f ./src/shared/altered/*
+rm -f ./src/shared/test/*
