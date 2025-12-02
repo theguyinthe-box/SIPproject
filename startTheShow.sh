@@ -1,10 +1,12 @@
+SCRIPT_PATH=$(readlink -f "$0")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+docker container rm -f sips
 echo Killing adb
 pkill adb
-echo Starting Program ...
-set CONTAINER_NAME="sips"
-docker run --gpus all --name sips -it -p 3000:3000 --privileged -v /dev/bus/usb:/dev/bun/usb --mount type=bind,source=./src/shared,target=/src/shared sips
-firefox "http://localhost:3000" &
+echo Starting Program...
+docker run --gpus all --name sips -p 3000:3000 --privileged -v /dev/bus/usb:/dev/bun/usb -v ./src/shared:/src/shared sips scripts/entrypoint.sh &
+brave "http://localhost:3000" &
 echo "waiting for firefox to close"
 wait $!
-docker exec -it %CONTAINER_NAME% bash -c "sh ~/src/scripts/exit.sh"
-docker stop %CONTAINER_NAME%
+docker exec -it sips bash -c "sh ~/src/scripts/exit.sh"
+docker container rm -f sips

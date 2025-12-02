@@ -2,7 +2,7 @@
 SCRIPT_PATH=$(readlink -f "$0")
 SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
 SRC_DIR=$(cd "$SCRIPT_DIR/.." && pwd)
-sh $SCRIPT_DIR/clear_shared_folders.sh
+#sh $SCRIPT_DIR/clear_shared_folders.sh
 
 adb pull sdcard/DCIM/Camera $SRC_DIR/shared/
 adb shell rm sdcard/DCIM/Camera/*
@@ -24,4 +24,4 @@ rm $SRC_DIR/shared/aligned/*
 rm $SRC_DIR/shared/alignment_vector/*
 
 # run the GUI
-node src/SIP_GUI/main.js
+node /src/SIP-GUI/main.js
