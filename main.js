@@ -1,0 +1,98 @@
+// const { app, BrowserWindow } = require('electron')
+const fs = require('fs');
+const path = require('path');
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+let subjectID = null;
+
+//Needs:
+//User input for subject ID
+//Randomly select an image from test dataset
+//Display image to user
+//Allow user to make selection from predefined set of options
+//File name is SubjectID.csv
+//Record subject ID, image shown, and user selection to a local file
+
+const publicDir = path.resolve(__dirname, 'public');
+const sharedDir = path.resolve(__dirname, '..', 'shared');
+
+app.use(express.static(publicDir));
+//app.use(express.static(sharedDir));
+
+console.log('Serving static files from:', publicDir);
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(publicDir, 'id_input.html'));
+})
+
+let server = app.listen(port, () => {
+  console.log(`app listening on port ${port}`)
+})
+
+app.get('/randomImage', (req, res) => {
+  let file = getImageFromTestData()
+  if (!file) {
+    res.status(404).send('<h1>No images found</h1>');
+    return;
+  }
+
+  res.set('X-Image-Filename', path.basename(file));
+  res.sendFile(file);
+})
+
+app.get('/closeApp', (req, res) => {
+  console.log("Closing App as per user request.");
+  server.close();
+  res.json({ success: true });
+  process.exit(0);
+})
+
+app.post('/subjectID', (req, res) => {
+  const { subjectID } = req.body;
+  this.subjectID = subjectID;
+  console.log('Received User ID:', this.subjectID);
+  res.json({ success: true, received: subjectID });
+})
+
+app.post('/userInput', (req, res) => {
+  const { selection, filename } = req.body;
+  writeSelection(this.subjectID, selection, filename)
+  deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
+  res.json({ success: true, received: { selection, filename } });
+})
+
+Array.prototype.random = function () { return this[Math.floor((Math.random() * this.length))]; }
+
+function getImageFromTestData() {
+  let files = fs.readdirSync(path.resolve(__dirname, '..', 'shared', 'test'));
+  files = files.filter(f => !f.startsWith('.'));
+  if (files.length === 0) return null;
+  return path.resolve(__dirname, '..', 'shared', 'test', files.random());
+}
+
+async function writeSelection(subjectID, userSelection, imageShown) {
+  let content = subjectID + "," + imageShown + "," + userSelection + "\n";
+  try {
+    fs.writeFileSync(path.resolve(__dirname + "/../shared/results/", subjectID + ".csv"), content, { flag: 'a' });
+    console.log("Writing : " + content)
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function deleteFileifExists(filePath) {
+  try {
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+      console.log(`Deleted file: ${filePath}`);
+    } else {
+      console.log(`File not found, nothing to delete: ${filePath}`);
+    }
+  } catch (err) {
+    console.error(`Error deleting file: ${filePath}`, err);
+  }
+}
