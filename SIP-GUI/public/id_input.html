@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Could you tell that I am not a web developer :P -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  </head>
+  <body>
+    <div class="center_wrap">
+      <h1>Please Enter your 4 digit Subject ID</h1>
+      <h1></h1>
+
+      <div id="user_id_container" class="user_id_boxes">
+        <input maxlength="1" inputmode="numeric" oninput="moveNext(this)" onkeydown="handleKeys(event, this)" />
+        <input maxlength="1" inputmode="numeric" oninput="moveNext(this)" onkeydown="handleKeys(event, this)" />
+        <input maxlength="1" inputmode="numeric" oninput="moveNext(this)" onkeydown="handleKeys(event, this)" />
+        <input maxlength="1" inputmode="numeric" oninput="moveNext(this)" onkeydown="handleKeys(event, this)" />
+      </div>
+      <h1></h1>
+      <button class="user_id_button" onclick="submitID()">submit</button>
+    </div>
+  </body>
+
+  
+</html>
+
+<script>
+function moveNext(el) {
+  const container = el.parentNode;
+  const boxes = container.children;
+  const index = Array.prototype.indexOf.call(boxes, el);
+
+  if(el.value && index < boxes.length - 1) {
+    boxes[index + 1].focus();
+  }
+}
+
+function handleKeys(evt, el) {
+  const allowed = ["Backspace","ArrowLeft","ArrowRight","Tab"];
+  const container = el.parentNode;
+  const boxes = container.children;
+  const index = Array.prototype.indexOf.call(boxes, el);
+
+  if(!/^\d$/.test(evt.key) && !allowed.includes(evt.key)) {
+    evt.preventDefault();
+  }
+
+if(evt.key === "Backspace") {
+    el.value = "";
+    if(index > 0) {
+      boxes[index - 1].focus();
+    }
+    evt.preventDefault(); 
+  }
+
+  if(evt.key === "ArrowLeft" && index > 0) {
+    boxes[index - 1].focus();
+    evt.preventDefault();
+  }
+
+  if(evt.key === "ArrowRight" && index < boxes.length - 1) {
+    boxes[index + 1].focus();
+    evt.preventDefault();
+  }
+}
+
+function submitID() {
+  const subjectID = getsubjectID();
+  if (!subjectID) return;
+
+  // Send POST request to local Express server
+  fetch('/subjectID', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ subjectID }) // send object { subjectID: '1234' }
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Server response:', data);
+    window.location.href = "image_check.html";
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert("Error sending request: " + error);
+  });
+}
+
+
+function getsubjectID() {
+  const container = document.getElementById('user_id_container');
+  const boxes = container.children;
+
+  // Combine the values of all 4 boxes
+  let subjectID = Array.from(boxes).map(b => b.value).join('');
+
+  if(subjectID.length === boxes.length) {
+    return subjectID;
+  } else {
+    alert("Please fill all 4 digits!");
+    return null;
+  }
+}
+
+</script>
