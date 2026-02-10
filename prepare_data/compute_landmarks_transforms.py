@@ -3,7 +3,7 @@ from pathlib import Path
 import pyrallis
 from dataclasses import dataclass
 
-from prepare_data.landmarks_handler import LandmarksHandler
+from landmarks_handler import LandmarksHandler
 
 
 @dataclass

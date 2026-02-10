@@ -18,18 +18,24 @@ class FaceEditor:
         else:
             paths = interfacegan_unaligned_edit_paths
 
-        self.interfacegan_directions = {
-            'age': torch.from_numpy(np.load(paths['age'])).cuda(),
-            'smile': torch.from_numpy(np.load(paths['smile'])).cuda(),
-            'pose': torch.from_numpy(np.load(paths['pose'])).cuda(),
-            'Male': torch.from_numpy(np.load(paths['Male'])).cuda(),
-        }
+        # Load all available direction boundaries and normalize keys to lowercase
+        self.interfacegan_directions = {}
+        for name, p in paths.items():
+            try:
+                vec = torch.from_numpy(np.load(p))
+            except Exception as e:
+                raise RuntimeError(f"Failed loading interfacegan boundary '{p}': {e}")
+            # move to GPU if available
+            if torch.cuda.is_available():
+                vec = vec.cuda()
+            self.interfacegan_directions[name.lower()] = vec
 
     def edit(self, latents: torch.tensor, direction: str, factor: int = 1, factor_range: Optional[Tuple[int, int]] = None,
              user_transforms: Optional[np.ndarray] = None, apply_user_transformations: Optional[bool] = False):
         edit_latents = []
         edit_images = []
-        direction = self.interfacegan_directions[direction]
+        # Normalize lookup to lowercase to match loaded keys
+        direction = self.interfacegan_directions[direction.lower()]
         if factor_range is not None:  # Apply a range of editing factors. for example, (-5, 5)
             for f in range(*factor_range):
                 edit_latent = latents + f * direction

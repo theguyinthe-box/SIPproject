@@ -36,16 +36,25 @@ styleclip_directions = {
 	'templates': Path('editing/styleclip_global_directions/templates.txt')
 }
 
-interfacegan_aligned_edit_paths = {
-	'age': Path('editing/interfacegan/boundaries/ffhq/age_boundary.npy'),
-	'smile': Path('editing/interfacegan/boundaries/ffhq/Smiling_boundary.npy'),
-	'pose': Path('editing/interfacegan/boundaries/ffhq/pose_boundary.npy'),
-	'Male': Path('editing/interfacegan/boundaries/ffhq/Male_boundary.npy'),
-}
+def _load_interfacegan_paths(subdir: str):
+	"""Scan the boundaries directory and build a mapping from a short name
+	(filename without the trailing '_boundary.npy') to the Path object.
+	"""
+	base = Path(f'editing/interfacegan/boundaries/{subdir}')
+	paths = {}
+	if base.exists():
+		for p in sorted(base.glob('*.npy')):
+			name = p.stem
+			# remove trailing suffix like '_boundary' if present
+			if name.endswith('_boundary'):
+				key = name[: -len('_boundary')]
+			else:
+				key = name
+			paths[key] = p
+	return paths
 
-interfacegan_unaligned_edit_paths = {
-	'age': Path('editing/interfacegan/boundaries/ffhqu/age_boundary.npy'),
-	'smile': Path('editing/interfacegan/boundaries/ffhqu/Smiling_boundary.npy'),
-	'pose': Path('editing/interfacegan/boundaries/ffhqu/pose_boundary.npy'),
-	'Male': Path('editing/interfacegan/boundaries/ffhqu/Male_boundary.npy'),
-}
+
+# Auto-populated mappings for InterfaceGAN boundaries. Keys are derived from
+# filenames in the corresponding directories (e.g. 'age_boundary.npy' -> 'age').
+interfacegan_aligned_edit_paths = _load_interfacegan_paths('ffhq')
+interfacegan_unaligned_edit_paths = _load_interfacegan_paths('ffhqu')
