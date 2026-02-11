@@ -18,11 +18,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 
 # Minimal set of packages required by this repository (adjust as needed)
-RUN apt-get update && \
-	apt-get install -y --no-install-recommends \
+RUN apt update -y && \
+	apt upgrade -y && \
+	apt install -y --no-install-recommends \
 		ca-certificates \
 		wget \
 		curl \
+		adb \
+		unzip \
+		npm \
 		cmake \
 		git \
 		build-essential \
@@ -63,6 +67,12 @@ RUN mkdir -p /workspace \
 
 # Put the new conda env's bin directory first so the environment is used by default.
 ENV PATH="${CONDA_DIR}/envs/sg3_env/bin:${PATH}"
+
+# Install fnm (Fast Node Manager) and Node.js 24 for the SIP-GUI frontend
+RUN curl -fsSL https://fnm.vercel.app/install | bash ; \
+	~/.local/share/fnm/fnm install 24
+
+RUN mkdir -p ~/.android/ && cp /src/adbkey* /root/.android/.
 
 # Default to an interactive shell. Replace with a script/command for automated runs.
 CMD ["bash"]
