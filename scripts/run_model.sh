@@ -22,13 +22,13 @@ python model/prepare_data/compute_landmarks_transforms.py \
 
 #Run the the model with their edit image script
 python model/inversion/scripts/inference_editing.py \
---output_path /path/to/experiment/inference \
---checkpoint_path experiments/restyle_e4e_ffhq_encode/checkpoints/best_model.pt \
---data_path /path/to/test_data \
+--output_path shared/test \
+--checkpoint_path model/pretrained_models/restyle_e4e_ffhq.pt \
+--data_path /shared/Camera \
 --test_batch_size 4 \
 --test_workers 4 \
 --n_iters_per_batch 3 \
 --edit_directions "[age,pose,smile]" \
 --factor_ranges "[(-5_5),(-5_5),(-5_5)]" \
---landmarks_transforms_path /path/to/landmarks_transforms.npy
+--landmarks_transforms_path /shared/landmarks_transforms/landmarks_transforms.npy
 

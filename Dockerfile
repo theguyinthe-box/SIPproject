@@ -55,7 +55,7 @@ RUN curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/rel
 ENV PATH="${CONDA_DIR}/bin:${PATH}"
 
 # Copy only the environment YAML used to create the conda env
-COPY environment/sg3_env.yaml /workspace/environment/sg3_env.yaml
+COPY model/environment/sg3_env.yaml /workspace/environment/sg3_env.yaml
 
 # Remove any `prefix:` from the YAML (it hard-codes a user path) and create the
 # environment under the name `sg3_env`. Clean cache afterwards to keep the image small.
@@ -71,8 +71,6 @@ ENV PATH="${CONDA_DIR}/envs/sg3_env/bin:${PATH}"
 # Install fnm (Fast Node Manager) and Node.js 24 for the SIP-GUI frontend
 RUN curl -fsSL https://fnm.vercel.app/install | bash ; \
 	~/.local/share/fnm/fnm install 24
-
-RUN mkdir -p ~/.android/ && cp /src/adbkey* /root/.android/.
 
 # Default to an interactive shell. Replace with a script/command for automated runs.
 CMD ["bash"]
