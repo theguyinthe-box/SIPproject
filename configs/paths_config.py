@@ -17,7 +17,7 @@ model_paths = {
 	'stylegan3_ffhq_unaligned': Path('pretrained_models/stylegan3-r-ffhqu-1024x1024.pkl'),
 	'stylegan3_ffhq_unaligned_pt': Path('pretrained_models/sg3-r-ffhqu-1024.pt'),
 	# model for face alignment
-	'shape_predictor': Path('pretrained_models/shape_predictor_68_face_landmarks.dat'),
+	'shape_predictor': Path('pretrained_models/shape_predictor_81_face_landmarks.dat'),
 	# models for ID similarity computation
 	'curricular_face': Path('pretrained_models/CurricularFace_Backbone.pth'),
 	'mtcnn_pnet': Path('pretrained_models/mtcnn/pnet.npy'),
