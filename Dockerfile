@@ -72,6 +72,6 @@ ENV PATH="${CONDA_DIR}/envs/sg3_env/bin:${PATH}"
 RUN curl -fsSL https://fnm.vercel.app/install | bash ; \
 	~/.local/share/fnm/fnm install 24
 
-# Default to an interactive shell. Replace with a script/command for automated runs.
-CMD ["bash"]
-
+# Download the models, gdown will automatically use cached versions if they exist, so this won't redownload every time you build the image.
+# Yeah its a bit slower but its fine
+CMD ["scripts/download_models.sh"]
