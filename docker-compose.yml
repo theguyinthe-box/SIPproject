@@ -9,13 +9,14 @@ services:
     privileged: true
     ports:
       - "3000:3000"
-    tmpfs:
-      - /shared
+#    tmpfs:
+#      - /shared
     volumes:
       - /dev/bus/usb:/dev/bus/usb
       - ./model:/model
       - ./SIP-GUI:/SIP-GUI
-#      - ./shared:/shared
+      - ./shared:/shared
+      - ./scripts:/scripts
       - ${HOME}/.android:/root/.android
     deploy:
       resources:
