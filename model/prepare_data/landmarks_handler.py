@@ -1,9 +1,13 @@
 from pathlib import Path
+import sys
 from typing import Optional, List
 
 import dlib
 import numpy as np
 from tqdm import tqdm
+
+sys.path.append(".")
+sys.path.append("..")
 
 from configs.paths_config import model_paths
 from utils.alignment_utils import get_stylegan_transform
