@@ -13,10 +13,10 @@ services:
 #      - /shared
     volumes:
       - /dev/bus/usb:/dev/bus/usb
-      - ./model:/model
-      - ./SIP-GUI:/SIP-GUI
-      - ./shared:/shared
-      - ./scripts:/scripts
+      - ./model:/workspace/model
+      - ./SIP-GUI:/workspace/SIP-GUI
+      - ./shared:/workspace/shared
+      - ./scripts:/workspace/scripts
       - ${HOME}/.android:/root/.android
     deploy:
       resources:
