@@ -1,9 +1,6 @@
 #! /bin/bash
 cd /workspace/model
 
-#Install GUI dependencies
-#npm install --prefix ./SIP-GUI/ # << This command can be run here or in the dockerfile, SIP-GUI is passed as a volume to the container so it can be run on the host machine as well, we will sort this out later
-
 #Now we to prepare our data, what we need to do here can be found in model/readme
 # the source image folder needs to be "Camera" because that is what ADB will save the images to, for some odd reason I can't change that so we live with it
 python prepare_data/preparing_faces_parallel.py --mode align --root_path ../shared/Camera
