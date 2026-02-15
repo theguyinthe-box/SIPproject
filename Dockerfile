@@ -9,7 +9,7 @@
 # Build-time arguments
 #############################
 # You can change PYTHON_VERSION or the CUDA base image tag as needed for your platform
-ARG BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+ARG BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 ARG PYTHON_VERSION=3.9
 
 FROM ${BASE_IMAGE}
@@ -64,6 +64,9 @@ RUN mkdir -p /workspace \
 	&& conda env create -f /workspace/sg3_env_no_prefix.yaml -n sg3_env -y \
 	&& conda clean -afy \
 	&& echo "source activate sg3_env" > ~/.bashrc
+
+RUN curl "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth" --create-dirs -o /root/.cache/torch/hub/checkpoints/alexnet-owt-7be5be79.pth
+RUN curl "https://raw.githubusercontent.com/richzhang/PerceptualSimilarity/master/lpips/weights/v0.1/alex.pth" --create-dirs -o /root/.cache/torch/hub/checkpoints/alex.pth
 
 # Put the new conda env's bin directory first so the environment is used by default.
 ENV PATH="${CONDA_DIR}/envs/sg3_env/bin:${PATH}"
