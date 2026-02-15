@@ -2,6 +2,7 @@ from typing import Optional, Tuple
 
 import numpy as np
 import torch
+import random
 
 from configs.paths_config import interfacegan_aligned_edit_paths, interfacegan_unaligned_edit_paths
 from models.stylegan3.model import GeneratorType
@@ -48,6 +49,29 @@ class FaceEditor:
             edit_latents = latents + factor * direction
             edit_images, _ = self._latents_to_image(edit_latents, apply_user_transformations)
         return edit_images, edit_latents
+    
+    def edit_random(self, latents: torch.tensor, direction: str, factor: int = 1, factor_range: Optional[Tuple[int, int]] = None,
+            image_count: int = 1, user_transforms: Optional[np.ndarray] = None, apply_user_transformations: Optional[bool] = False):
+        edit_latents = []
+        edit_images = []
+        factors_used = []
+        # Normalize lookup to lowercase to match loaded keys
+        direction = self.interfacegan_directions[direction.lower()]
+        if factor_range is not None:  # Apply a range of editing factors. for example, (-5, 5)
+            for f in range(image_count):
+                factor = random.uniform(factor_range[0], factor_range[1])
+                edit_latent = latents +  factor * direction
+                edit_image, user_transforms = self._latents_to_image(edit_latent,
+                                                                     apply_user_transformations,
+                                                                     user_transforms)
+                factors_used.append(factor)
+                edit_latents.append(edit_latent)
+                edit_images.append(edit_image)
+        else:
+            edit_latents = latents + factor * direction
+            edit_images, _ = self._latents_to_image(edit_latents, apply_user_transformations)
+            factors_used = factor
+        return edit_images, edit_latents, factors_used
 
     def _latents_to_image(self, all_latents: torch.tensor, apply_user_transformations: bool = False,
                           user_transforms: Optional[torch.tensor] = None):
