@@ -40,14 +40,14 @@ class FaceEditor:
         if factor_range is not None:  # Apply a range of editing factors. for example, (-5, 5)
             for f in range(*factor_range):
                 edit_latent = latents + f * direction
-                edit_image, user_transforms = self._latents_to_image(edit_latent,
+                edit_image, _, user_transforms = self._latents_to_image(edit_latent,
                                                                      apply_user_transformations,
                                                                      user_transforms)
                 edit_latents.append(edit_latent)
                 edit_images.append(edit_image)
         else:
             edit_latents = latents + factor * direction
-            edit_images, _ = self._latents_to_image(edit_latents, apply_user_transformations)
+            edit_images, _, _ = self._latents_to_image(edit_latents, apply_user_transformations)
         return edit_images, edit_latents
     
     def edit_random(self, latents: torch.tensor, direction: str, factor: int = 1, factor_range: Optional[Tuple[int, int]] = None,
@@ -55,23 +55,25 @@ class FaceEditor:
         edit_latents = []
         edit_images = []
         factors_used = []
+        edit_tensors = []
         # Normalize lookup to lowercase to match loaded keys
         direction = self.interfacegan_directions[direction.lower()]
         if factor_range is not None:  # Apply a range of editing factors. for example, (-5, 5)
             for f in range(image_count):
                 factor = random.uniform(factor_range[0], factor_range[1])
                 edit_latent = latents +  factor * direction
-                edit_image, user_transforms = self._latents_to_image(edit_latent,
+                edit_image, edit_tensor, user_transforms = self._latents_to_image(edit_latent,
                                                                      apply_user_transformations,
                                                                      user_transforms)
                 factors_used.append(factor)
                 edit_latents.append(edit_latent)
                 edit_images.append(edit_image)
+                edit_tensors.append(edit_tensor)
         else:
             edit_latents = latents + factor * direction
-            edit_images, _ = self._latents_to_image(edit_latents, apply_user_transformations)
+            edit_images, edit_tensors, _ = self._latents_to_image(edit_latents, apply_user_transformations)
             factors_used = factor
-        return edit_images, edit_latents, factors_used
+        return edit_images, edit_tensors, edit_latents, factors_used
 
     def _latents_to_image(self, all_latents: torch.tensor, apply_user_transformations: bool = False,
                           user_transforms: Optional[torch.tensor] = None):
@@ -85,6 +87,6 @@ class FaceEditor:
                     user_transforms = torch.from_numpy(user_transforms)
                 self.generator.synthesis.input.transform = user_transforms.cuda().float()
             # generate the images
-            images = self.generator.synthesis(all_latents, noise_mode='const')
-            images = [tensor2im(image) for image in images]
-        return images, user_transforms
+            images_tensors = self.generator.synthesis(all_latents, noise_mode='const')
+            images = [tensor2im(image) for image in images_tensors]
+        return images, images_tensors, user_transforms

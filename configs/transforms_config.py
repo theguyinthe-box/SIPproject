@@ -24,7 +24,11 @@ class EncodeTransforms(TransformsConfig):
 				transforms.RandomHorizontalFlip(0.5),
 				transforms.ToTensor(),
 				transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])]),
-			'transform_source': None,
+			'transform_source': transforms.Compose([
+				transforms.Resize((1024, 1024)),
+				transforms.RandomHorizontalFlip(0.5),
+				transforms.ToTensor(),
+				transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])]),
 			'transform_test': transforms.Compose([
 				transforms.Resize((256, 256)),
 				transforms.ToTensor(),
