@@ -9,7 +9,7 @@
 # Build-time arguments
 #############################
 # You can change PYTHON_VERSION or the CUDA base image tag as needed for your platform
-ARG BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+ARG BASE_IMAGE=nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 ARG PYTHON_VERSION=3.9
 
 FROM ${BASE_IMAGE}
