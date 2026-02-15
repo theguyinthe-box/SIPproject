@@ -35,6 +35,8 @@ class TestOptions:
     edit_directions: List[str] = field(default=["age", "smile", "pose"], is_mutable=True)
     # List of ranges for each edit. For example, (-4_5) defines an editing range from -4 to 5
     factor_ranges: List[str] = dataclasses.field(default_factory=lambda: ["(-5_5)", "(-5_5)", "(-5_5)"])
+    # How many edited images to generate per edit direction only valid in random editing
+    n_edited_images_per_direction: int = 5
 
     def __post_init__(self):
         self.factor_ranges = self._parse_factor_ranges()
