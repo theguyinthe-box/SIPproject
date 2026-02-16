@@ -1,11 +1,31 @@
+/* THIS IS BAD, like a really bad way to do it */
+/* I am not a web developer and a lot of it was with AI */
+/* If you're gonna do it, do it the proper way */
+/* I just had a extremely short deadline */
+
 html, body {
   margin: 0;
   padding: 0;
   /*overflow: hidden;*/   /* ← disables scrollbars */
   height: 100%;
   width: 100%;
+  background-color: #808080;
 }
 
+.no_click {
+  pointer-events: none; /* ← disables clicking on buttons */
+}
+
+.wait_countdown_timer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ← Perfect centering */
+  z-index: 100; /* Above the buttons */
+  margin: 0;
+  font-size: 500px;
+  color: black;
+}
 
 /* Center the image on the screen */
 .display_img {
@@ -14,6 +34,8 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%); /* ← Perfect centering */
   width: 25%;
+  z-index: 200; /* Above the buttons AND above the countdown timer */
+  opacity: 1;
 }
 
 /* Each button takes exactly 50% of screen width */
@@ -25,6 +47,23 @@ html, body {
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
   border: none;
+  z-index: 0; /* Below the image and countdown timer */
+  background-color: #808080; /* Match the background */
+  color: black;           /* Darker text for readability */
+  transition: background-color 0.2s; /* Smooth transition */
+}
+
+/* This overrides your normal hover effects */
+.button.waiting {
+  pointer-events: none;   /* Disables clicking */
+  cursor: default;        /* Changes hand cursor back to normal arrow */
+  opacity: 0;           /* Optional: makes them look "greyed out" *//
+}
+
+/* Ensure your normal hover is only active when NOT waiting */
+.button:not(.waiting):hover {
+  background-color: #8c8c8c; /* Very subtle lightened grey */
+  cursor: pointer;
 }
 
 .timer_bar {
