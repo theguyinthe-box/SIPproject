@@ -14,6 +14,7 @@ services:
       - ./model:/workspace/model
       - ./SIP-GUI:/workspace/SIP-GUI
       - ./shared:/workspace/shared
+      - ./results:/workspace/results
       - ./scripts:/workspace/scripts
       - ${HOME}/.android:/root/.android
     deploy:

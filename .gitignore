@@ -1,2 +1,3 @@
 # Prevent "shared" data from being committed, this is a test only folder
 shared/
+results/
