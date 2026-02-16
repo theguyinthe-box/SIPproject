@@ -11,7 +11,7 @@ window.onload = async function () {
 
 let selection_interval = null;
 let selection_delta = 1;
-let timePerImage = 20; //seconds
+let timePerImage = 10; //seconds
 async function startSelectionCountdown(){
     let timeLeft = timePerImage;
     if (selection_interval) clearInterval(selection_interval);
