@@ -119,7 +119,7 @@ async function writeSelection(subjectID, userSelection, imageShownPath) {
 async function deleteFileifExists(filePath) {
   try {
     if (fs.existsSync(filePath)) {
-      //fs.unlinkSync(filePath);
+      fs.unlinkSync(filePath);
       console.log(`Deleted file: ${filePath}`);
     } else {
       console.log(`File not found, nothing to delete: ${filePath}`);
