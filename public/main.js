@@ -1,29 +1,72 @@
 let imageFilename = "";
 
-window.onload = function () {
-    getRandomImage();
+window.onload = async function () {
+    timer_element = document.getElementById("countdown");
+    // Set source to a 1x1 transparent GIF
+    document.getElementById("rand_img").src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
+    await waitForNextSelection(timeBetweenSelections);
+    await getRandomImage();
     startSelectionCountdown();
 }
 
-let interval = null;
-let delta = 1;
-let timePerImage = 5; //seconds
+let selection_interval = null;
+let selection_delta = 1;
+let timePerImage = 10; //seconds
 async function startSelectionCountdown(){
     let timeLeft = timePerImage;
-    if (interval) clearInterval(interval);
-    interval = setInterval(() => {
-        timeLeft -= 1.0 * delta;
+    if (selection_interval) clearInterval(selection_interval);
+    selection_interval = setInterval(() => {
+        timeLeft -= 1.0 * selection_delta;
 
-        if (timeLeft > 0) { //We want the user to see the zero first before moving on
-        } else {
+        if (timeLeft <= 0) { //We want the user to see the zero first before moving on
             console.log("Time's up!");
-            clearInterval(interval);
+            clearInterval(selection_interval);
             makeSelection("No Response");
         }
-    }, 1000 * delta);
+    }, 1000 * selection_delta);
+}
+
+
+let timer_element = null;
+let timeBetweenSelections = 3; //seconds
+let tickRate = 500; //milliseconds 
+let wait_interval = null;
+let waiting_delta = .05;
+async function waitForNextSelection(s) {
+    let buttons = document.querySelectorAll('.button');
+    buttons.forEach(btn => btn.classList.add('waiting'));    
+    timer_element.innerText = Math.ceil(s);
+    timer_element.style.opacity = 1; // Show the timer when waiting
+
+    if (wait_interval) clearInterval(wait_interval);
+    let timeLeft = s;
+
+
+    return new Promise((resolve) => { wait_interval = setInterval(() => {
+            timeLeft -= 1.0 * waiting_delta; // Normalize the time decrement to be consistent with the tick rate
+            timer_element.innerText = Math.ceil(timeLeft);
+            
+            if (timeLeft <= 0) { //We want the user to see the zero first before moving on
+                console.log("Time to make next selection!");
+                clearInterval(wait_interval);
+                wait_interval = null;
+                resolve();
+                timer_element.style.opacity = 0; // Hide the timer when not waiting
+                buttons.forEach(btn => btn.classList.remove('waiting'));
+            }
+        }, tickRate * waiting_delta);
+    });
 }
 
 async function makeSelection(userSelection) {
+    if (wait_interval){ //Don't allow user to make selection if they are supposed to be waiting for next image
+        console.log("User tried to make selection while waiting for next image. Ignoring selection.");
+        return;
+    }
+
+    clearInterval(selection_interval);
+    // Set source to a 1x1 transparent GIF
+    document.getElementById("rand_img").src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
     try {
         const response = await fetch('/userInput', {
             method: 'POST', 
@@ -35,6 +78,7 @@ async function makeSelection(userSelection) {
                 filename: imageFilename
             })
         });
+        await waitForNextSelection(timeBetweenSelections);
         await getRandomImage();
         startSelectionCountdown();
         return response;
@@ -42,9 +86,9 @@ async function makeSelection(userSelection) {
         console.error('Error:', error);
         alert("Error sending request: " + error);
     }
-    
 }
 
+let currURL = "";
 async function getRandomImage() {
     const baseUrl = '/randomImage';
     const timestamp = new Date().getTime();
@@ -56,7 +100,10 @@ async function getRandomImage() {
         response.status === 404 && (() => { window.location.href = "complete.html" })();
         imageFilename = response.headers.get('X-Image-Filename');
         const blob = await response.blob();
-        document.getElementById("rand_img").src = window.URL.createObjectURL(blob);
+        if(currURL) { window.URL.revokeObjectURL(currURL); } // Clean up previous URL to avoid memory leaks
+
+        currURL = window.URL.createObjectURL(blob);
+        document.getElementById("rand_img").src = currURL;
         
         return response;
     } catch (error) {
