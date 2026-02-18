@@ -7,4 +7,4 @@ echo Starting Program...
 docker compose up -d
 docker exec sips /workspace/scripts/get_images.sh
 docker exec sips /workspace/scripts/run_model.sh
-docker exec sips /workspace/script/start_gui.sh
+docker exec sips /workspace/scripts/start_gui.sh

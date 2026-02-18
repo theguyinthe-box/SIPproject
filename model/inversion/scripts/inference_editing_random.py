@@ -23,8 +23,8 @@ from inversion.options.test_options import TestOptions
 from models.stylegan3.model import GeneratorType
 from utils.common import tensor2im
 from utils.inference_utils import get_average_image, run_on_batch, load_encoder
-from model.criteria.lpips.lpips import LPIPS
-from model.criteria.ms_ssim import MSSSIM
+from criteria.lpips.lpips import LPIPS
+from criteria.ms_ssim import MSSSIM
 
 @pyrallis.wrap()
 def run(test_opts: TestOptions):

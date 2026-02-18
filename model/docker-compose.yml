@@ -4,16 +4,14 @@ services:
     container_name: sips
     stdin_open: true
     tty: true
-#   Replace this with device=...
-#   we dont want hte docker have this
     privileged: true
     ports:
-      - "3000:3000"
+      - "3001:3001"
 #    tmpfs:
 #      - /shared
     volumes:
       - /dev/bus/usb:/dev/bus/usb
-      - ../model:/workspace/model
+      - ../model:/workspace
       - ../shared:/workspace/shared
       - ../results:/workspace/results
       - ./scripts:/workspace/scripts
