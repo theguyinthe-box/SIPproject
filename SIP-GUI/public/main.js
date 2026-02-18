@@ -13,13 +13,13 @@ let selection_interval = null;
 let selection_delta = 1;
 let timePerImage = 10; //seconds
 async function startSelectionCountdown(){
+    selectionTimer = Date.now()
     let timeLeft = timePerImage;
     if (selection_interval) clearInterval(selection_interval);
     selection_interval = setInterval(() => {
         timeLeft -= 1.0 * selection_delta;
-
         if (timeLeft <= 0) { //We want the user to see the zero first before moving on
-            console.log("Time's up!");
+            //console.log("Time's up!");
             clearInterval(selection_interval);
             makeSelection("No Response");
         }
@@ -47,7 +47,7 @@ async function waitForNextSelection(s) {
             timer_element.innerText = Math.ceil(timeLeft);
             
             if (timeLeft <= 0) { //We want the user to see the zero first before moving on
-                console.log("Time to make next selection!");
+                //console.log("Time to make next selection!");
                 clearInterval(wait_interval);
                 wait_interval = null;
                 resolve();
@@ -58,7 +58,8 @@ async function waitForNextSelection(s) {
     });
 }
 
-async function makeSelection(userSelection) {
+let selectionTimer = Date.now();
+async function makeSelection(userSelection, timeTaken) {
     if (wait_interval){ //Don't allow user to make selection if they are supposed to be waiting for next image
         console.log("User tried to make selection while waiting for next image. Ignoring selection.");
         return;
@@ -68,14 +69,15 @@ async function makeSelection(userSelection) {
     // Set source to a 1x1 transparent GIF
     document.getElementById("rand_img").src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
     try {
-        const response = await fetch('/userInput', {
+        const response = await fetch('http://127.0.0.1:3001/userInput', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 selection: userSelection,
-                filename: imageFilename
+                filename: imageFilename,
+                timeTaken: (Date.now() - selectionTimer)
             })
         });
         await waitForNextSelection(timeBetweenSelections);
@@ -90,7 +92,7 @@ async function makeSelection(userSelection) {
 
 let currURL = "";
 async function getRandomImage() {
-    const baseUrl = '/randomImage';
+    const baseUrl = 'http://127.0.0.1:3001/randomImage';
     const timestamp = new Date().getTime();
     const uniqueUrl = `${baseUrl}?t=${timestamp}`;
     try {
