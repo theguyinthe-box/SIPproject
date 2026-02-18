@@ -1,0 +1,25 @@
+services:
+  sips:
+    image: sips
+    container_name: sips
+    stdin_open: true
+    tty: true
+    privileged: true
+    ports:
+      - "3000:3000"
+#    tmpfs:
+#      - /shared
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ../model:/workspace/model
+      - ../shared:/workspace/shared
+      - ../results:/workspace/results
+      - ./scripts:/workspace/scripts
+      - ${HOME}/.android:/root/.android
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
