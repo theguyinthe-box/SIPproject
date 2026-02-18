@@ -55,7 +55,7 @@ RUN curl -fsSL -o /tmp/miniforge.sh https://github.com/conda-forge/miniforge/rel
 ENV PATH="${CONDA_DIR}/bin:${PATH}"
 
 # Copy only the environment YAML used to create the conda env
-COPY model/environment/sg3_env.yaml /workspace/environment/sg3_env.yaml
+COPY environment/sg3_env.yaml /workspace/environment/sg3_env.yaml
 
 # Remove any `prefix:` from the YAML (it hard-codes a user path) and create the
 # environment under the name `sg3_env`. Clean cache afterwards to keep the image small.
