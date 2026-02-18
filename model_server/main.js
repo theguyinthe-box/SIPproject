@@ -8,7 +8,7 @@ const exifr = require('exifr');
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3001;
 
 let subjectID = null;
 
@@ -44,8 +44,8 @@ app.post('/subjectID', (req, res) => {
 })
 
 app.post('/userInput', (req, res) => {
-  const { selection, filename } = req.body;
-  writeSelection(this.subjectID, selection, path.resolve(__dirname, '..', 'shared', 'test', filename))
+  const { selection, filename, timeTaken} = req.body;
+  writeSelection(this.subjectID, selection, path.resolve(__dirname, '..', 'shared', 'test', filename), timeTaken)
   deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
   res.json({ success: true, received: { selection, filename } });
 })
@@ -67,6 +67,7 @@ async function setupDataFile(subjectID) {
   let headers = "SubjectID";
   headers += "," + "Image Shown";
   headers += "," + "User Selection";
+  headers += "," + "Time Taken";
   headers += "," + "Edit Direction";
   headers += "," + "Edit Factor";
   headers += "," + "Computed LPIPS";
@@ -78,7 +79,7 @@ async function setupDataFile(subjectID) {
   }
 }
 
-async function writeSelection(subjectID, userSelection, imageShownPath) {
+async function writeSelection(subjectID, userSelection, imageShownPath, timeTaken) {
   let content = subjectID;
   try {
     const file = fs.readFileSync(path.resolve(imageShownPath));
@@ -87,6 +88,7 @@ async function writeSelection(subjectID, userSelection, imageShownPath) {
   // I do this is way for readability and extendability
     content += "," + path.basename(imageShownPath);
     content += "," + userSelection;
+    content += "," + timeTaken + " ms";
     content += "," + exif["edit_direction"];
     content += "," + exif["edit_factor"];
     content += "," + exif["computed_lpips"];
