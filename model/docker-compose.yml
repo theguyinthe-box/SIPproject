@@ -4,6 +4,8 @@ services:
     container_name: sips
     stdin_open: true
     tty: true
+#   Replace this with device=...
+#   we dont want hte docker have this
     privileged: true
     ports:
       - "3000:3000"
