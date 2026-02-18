@@ -9,7 +9,10 @@ html, body {
   /*overflow: hidden;*/   /* ← disables scrollbars */
   height: 100%;
   width: 100%;
-  background-color: #808080;
+}
+
+.dark{
+  background-color: #8c8c8c;
 }
 
 .no_click {

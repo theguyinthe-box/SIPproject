@@ -70,7 +70,7 @@ function submitID() {
   if (!subjectID) return;
 
   // Send POST request to local Express server
-  fetch('/subjectID', {
+  fetch('http://127.0.0.1:3001/subjectID', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
