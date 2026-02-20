@@ -75,5 +75,8 @@ ENV PATH="${CONDA_DIR}/envs/sg3_env/bin:${PATH}"
 RUN curl -fsSL https://fnm.vercel.app/install | bash ; \
 	~/.local/share/fnm/fnm install 24
 
+COPY model_server/package.json /workspace/model_server/package.json
+RUN bash -c "npm install --prefix /workspace/model_server/"
+
 COPY entrypoint.sh /entrypoint.sh
 CMD ["bash"]
