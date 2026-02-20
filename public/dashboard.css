@@ -43,24 +43,18 @@ html, body {
 
 /* Each button takes exactly 50% of screen width */
 .button {
-  width: 50%;          /* ← Half the screen */
-  height: 100%;       /* ← Full height */
-  font-size: 24px;
-  display: flex;
-  align-items: center; /* Center text vertically */
-  justify-content: center; /* Center text horizontally */
-  border: none;
-  z-index: 0; /* Below the image and countdown timer */
-  background-color: #808080; /* Match the background */
-  color: black;           /* Darker text for readability */
-  transition: background-color 0.2s; /* Smooth transition */
+    justify-content: center;
+    font-size: 24px;
+    display: flex;
+    z-index: 0; /* Below the image and countdown timer */
+    transition: background-color 0.2s; /* Smooth transition */
 }
 
 /* This overrides your normal hover effects */
 .button.waiting {
   pointer-events: none;   /* Disables clicking */
   cursor: default;        /* Changes hand cursor back to normal arrow */
-  opacity: 0;           /* Optional: makes them look "greyed out" *//
+  opacity: .25;           /* Optional: makes them look "greyed out" *//
 }
 
 /* Ensure your normal hover is only active when NOT waiting */
@@ -69,57 +63,26 @@ html, body {
   cursor: pointer;
 }
 
-.timer_bar {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 0%;
-  font-size: 10vh;
+.center{
+    display: flex;
+    align-self: center;
 }
 
-/* Container stretches full screen and puts buttons side-by-side */
-.center_div {
-  position: relative;
-  z-index: 10;         /* Buttons stay above the image */
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.center_wrap{
+.center-wrap{
   display: flex;
   flex-direction: column;
   justify-content: center;   /* vertical centering */
   align-items: center;        /* horizontal centering */
   height: 100vh;              /* fill screen so centering works */
+  gap: 10px;
 }
 
-.user_id_boxes {
-  display: flex;
-  gap: 50px;
-}
-
-.user_id_boxes input {
-  width: 150px;
-  height: 150px;
-  font-size: 100px;
-  text-align: center;
-  border: 3px solid grey;
-  outline: none;
-}
-
-.user_id_button {
-  display: block;
-  align-self: center;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  padding: 10px 20px;
-}
-
-.user_id_button.waiting{
-  pointer-events: none;   /* Disables clicking */
-  cursor: default;        /* Changes hand cursor back to normal arrow */
-  opacity: .5;           /* Optional: makes them look "greyed out" *//
+.debug-box {
+    width: 50%; 
+    height: 250px; 
+    font-family: monospace;
+    padding: 10px;
+    white-space: pre; /* Keeps the log formatting exactly as it comes from Python */
+    overflow-wrap: normal;
+    overflow-x: scroll;
 }

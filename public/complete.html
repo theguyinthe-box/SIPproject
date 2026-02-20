@@ -3,29 +3,24 @@
 
 <head>
   <!-- Could you tell that I am not a web developer :P -->
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <script src="main.js"></script>
   <meta charset="UTF-8" />
 </head>
 
 <body>
-  <div class="center_wrap">
+  <div class="center-wrap">
     <H1 style="font-size: 200px;">Completed</H1>
-    <button onclick="window.location.href = '/'" title="Click this after you run startTheShow again">Return to Start</button>
+    <button id="b-return" class="button waiting" onclick="window.location.href = '/'" title="Click this after you run startTheShow again">Return to Start</button>
   </div>
 
 </body>
 
 <script>
-window.onload = function () {
-  closeApp();
-}
-
-function closeApp() {
-    fetch('/closeContainer')
-        .then(response => {})
-        .catch(error => {
-            console.error('Error:', error);
-        });
+window.onload = async function () {
+    fetch('/stop-container');
+    await waitForServerDown(500)
+    document.querySelector('#b-return').classList.remove('waiting');
 }
 </script>
 
