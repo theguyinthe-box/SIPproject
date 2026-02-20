@@ -3,6 +3,7 @@
   <head>
     <!-- Could you tell that I am not a web developer :P -->
     <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
   </head>
@@ -18,7 +19,7 @@
         <input maxlength="1" inputmode="numeric" oninput="moveNext(this)" onkeydown="handleKeys(event, this)" />
       </div>
       <h1></h1>
-      <button class="user_id_button" onclick="submitID()">submit</button>
+      <button class="user_id_button waiting" onclick="submitID()">submit</button>
     </div>
   </body>
 
@@ -26,6 +27,14 @@
 </html>
 
 <script>
+
+window.onload = async function () {
+  
+  await waitForServer(1000);
+  let buttons = document.querySelectorAll('#user_id_button');
+  buttons.forEach(btn => btn.classList.remove('waiting'));
+}
+
 function moveNext(el) {
   const container = el.parentNode;
   const boxes = container.children;

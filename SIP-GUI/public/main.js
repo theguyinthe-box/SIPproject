@@ -113,3 +113,29 @@ async function getRandomImage() {
         alert("Error sending request: " + error);
     }
 }
+
+const delay = (durationMs) => {return new Promise(resolve => setTimeout(resolve, durationMs));}
+async function waitForServer(timeout=2000) {
+    const url = 'http://127.0.0.1:3001/getStatus';
+    while (!(await checkServerStatus())) {
+        await delay(timeout);
+    }
+    return true; 
+}
+
+async function waitForServerDown(timeout=2000) {
+    const url = 'http://127.0.0.1:3001/getStatus';
+    while (await checkServerStatus()) {
+        await delay(timeout);
+    }
+    return true; 
+}
+
+async function checkServerStatus(){
+    const url = 'http://127.0.0.1:3001/getStatus';
+    try {
+        const response = await fetch(url);
+        if (response.ok) { return true; }
+    } catch (error) {}
+    return false
+}

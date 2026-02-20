@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Could you tell that I am not a web developer :P -->
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <script src="main.js"></script>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+    <div class="center-wrap">
+        <h2 class="center" style="font-size: 200%;">Self Image Perception Dashboard</h2>
+        <button id="b-start-test" class="button waiting" style="font-size: 200%;" onclick="window.location.href = '/id_input.html'">Start Test</button>
+        <button id="b-stop" class="button" style="font-size: 200%;" onclick="stopContainer()">Stop Container</button>
+        <button id="b-run" class="button" style="font-size: 200%;" onclick="startContainer()">Run Container</button>
+        <progress id="file-progress" class="progress" value="100"> </progress>
+    <textarea id="debug-output" class="debug-box" readonly></textarea>
+    
+    </div>
+</body>
+
+<script>
+
+window.onload = async function () {
+    setButtons(await checkServerStatus())
+}
+
+function setButtons(serverRunning){
+    if(!serverRunning){
+        document.querySelector('#b-start-test').classList.add('waiting');
+        document.querySelector('#b-stop').classList.add('waiting');
+        document.querySelector('#b-run').classList.remove('waiting');
+    } else {
+        document.querySelector('#b-start-test').classList.remove('waiting');
+        document.querySelector('#b-stop').classList.remove('waiting');
+        document.querySelector('#b-run').classList.add('waiting');
+    }
+}
+
+async function serverPoll(timeout){
+    setInterval(async () => {
+        serverRunning = await checkServerStatus();
+        setButtons(serverRunning);
+    }, timeout);
+}
+
+async function stopContainer(){
+    const progressBar = document.querySelector('#file-progress');
+
+    progressBar.removeAttribute('value');
+
+    document.querySelector('#b-stop').classList.add('waiting');
+    document.querySelector('#b-start-test').classList.add('waiting');
+    const outputBox = document.querySelector('#debug-output');
+    const eventSource = new EventSource('/stop-model');
+    eventSource.onmessage = function(event) {
+        
+        // Append the new data to the textarea
+        outputBox.value += event.data + "\n";
+        
+        // Auto-scroll to the bottom
+        outputBox.scrollTop = outputBox.scrollHeight;
+    };
+    
+    await waitForServerDown(500)
+    setButtons(false)
+    progressBar.value = 100
+}
+
+async function startContainer() {
+    document.querySelector('#b-run').classList.add('waiting');
+    const outputBox = document.querySelector('#debug-output');
+    const progressBar = document.querySelector('#file-progress');
+    progressBar.removeAttribute('value');
+
+    //AI 💀
+    outputBox.value = "Stopping container...\n"; // Clear/Init box
+    const eventSource = new EventSource('/container-logs');
+    eventSource.onmessage = function(event) {
+        
+        // Append the new data to the textarea
+        outputBox.value += event.data + "\n";
+        
+        // Auto-scroll to the bottom
+        outputBox.scrollTop = outputBox.scrollHeight;
+    };
+
+    eventSource.onerror = function() {
+        console.log("Stream ended or encountered an error.");
+        // When finished, you can set the value to 100 to make it stop moving
+        progressBar.value = 100; 
+        eventSource.close();
+    };
+
+
+    await waitForServer(1000)
+    progressBar.value = 100; 
+    setButtons(true)
+}
+
+</script>
+
+</html>

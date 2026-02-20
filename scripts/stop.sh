@@ -1,2 +1,2 @@
 cd ../model
-docker compose down
+docker compose stop
