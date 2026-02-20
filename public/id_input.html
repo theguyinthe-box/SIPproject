@@ -19,7 +19,7 @@
         <input maxlength="1" inputmode="numeric" oninput="moveNext(this)" onkeydown="handleKeys(event, this)" />
       </div>
       <h1></h1>
-      <button class="user_id_button waiting" onclick="submitID()">submit</button>
+      <button id="user_id_button" class="user_id_button waiting" onclick="submitID()">submit</button>
     </div>
   </body>
 
@@ -29,10 +29,8 @@
 <script>
 
 window.onload = async function () {
-  
-  await waitForServer(1000);
-  let buttons = document.querySelectorAll('#user_id_button');
-  buttons.forEach(btn => btn.classList.remove('waiting'));
+  await waitForServer(100)
+  document.querySelector('#user_id_button').classList.remove('waiting');
 }
 
 function moveNext(el) {

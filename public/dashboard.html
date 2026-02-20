@@ -30,11 +30,9 @@ function setButtons(serverRunning){
     if(!serverRunning){
         document.querySelector('#b-start-test').classList.add('waiting');
         document.querySelector('#b-stop').classList.add('waiting');
-        document.querySelector('#b-run').classList.remove('waiting');
     } else {
         document.querySelector('#b-start-test').classList.remove('waiting');
         document.querySelector('#b-stop').classList.remove('waiting');
-        document.querySelector('#b-run').classList.add('waiting');
     }
 }
 
@@ -95,6 +93,7 @@ async function startContainer() {
 
 
     await waitForServer(1000)
+    document.querySelector('#b-run').classList.remove('waiting');
     progressBar.value = 100; 
     setButtons(true)
 }
