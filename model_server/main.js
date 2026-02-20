@@ -12,16 +12,25 @@ const port = 3001;
 
 let subjectID = null;
 
-const sharedDir = path.resolve(__dirname, '..', 'shared');
+const dataDir = path.resolve(__dirname, '..', 'data');
 
-app.use(express.static(publicDir));
-//app.use(express.static(sharedDir));
+app.use(express.static(dataDir));
 
-console.log('Serving static files from:', publicDir);
 app.use(express.json());
 
 let server = app.listen(port, () => {
   console.log(`app listening on port ${port}`)
+  console.log('data path is ' + dataDir);
+})
+
+server.on('error', (e) => {
+  if (e.code === 'EADDRINUSE') {
+    console.error('PORT ' + port +  ' in use');
+  }
+});
+
+app.get('/getStatus', (req, res) => {
+  res.status(200).send('Server Up')
 })
 
 app.get('/randomImage', (req, res) => {
@@ -35,6 +44,7 @@ app.get('/randomImage', (req, res) => {
   res.sendFile(file);
 })
 
+
 app.post('/subjectID', (req, res) => {
   const { subjectID } = req.body;
   this.subjectID = subjectID;
@@ -45,18 +55,18 @@ app.post('/subjectID', (req, res) => {
 
 app.post('/userInput', (req, res) => {
   const { selection, filename, timeTaken} = req.body;
-  writeSelection(this.subjectID, selection, path.resolve(__dirname, '..', 'shared', 'test', filename), timeTaken)
-  deleteFileifExists(path.resolve(__dirname, '..', 'shared', 'test', filename));
+  writeSelection(this.subjectID, selection, path.resolve(dataDir, 'test', filename), timeTaken)
+  deleteFileifExists(path.resolve(dataDir, 'test', filename));
   res.json({ success: true, received: { selection, filename } });
 })
 
 Array.prototype.random = function () { return this[Math.floor((Math.random() * this.length))]; }
 
 function getImageFromTestData() {
-  let files = fs.readdirSync(path.resolve(__dirname, '..', 'shared', 'test'));
+  let files = fs.readdirSync(path.resolve(dataDir, 'test'));
   files = files.filter(f => !f.startsWith('.'));
   if (files.length === 0) return null;
-  return path.resolve(__dirname, '..', 'shared', 'test', files.random());
+  return path.resolve(dataDir, 'test', files.random());
 }
 
 async function setupDataFile(subjectID) {

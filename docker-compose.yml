@@ -12,7 +12,7 @@ services:
     volumes:
       - /dev/bus/usb:/dev/bus/usb
       - ../model:/workspace
-      - ../shared:/workspace/shared
+      - ../shared:/workspace/data
       - ../results:/workspace/results
       - ./scripts:/workspace/scripts
       - ${HOME}/.android:/root/.android
