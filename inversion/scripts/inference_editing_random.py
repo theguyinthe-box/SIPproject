@@ -26,6 +26,8 @@ from utils.inference_utils import get_average_image, run_on_batch, load_encoder
 from criteria.lpips.lpips import LPIPS
 from criteria.ms_ssim import MSSSIM
 
+import uuid
+
 @pyrallis.wrap()
 def run(test_opts: TestOptions):
 
@@ -105,8 +107,23 @@ def run(test_opts: TestOptions):
                     metadata.add_text("computed_msssim", str(computed_msssim))
                     edit_save_dir = out_path_results
                     edit_save_dir.mkdir(exist_ok=True, parents=True)
-                    result.save(edit_save_dir / f"{edit_name}_{im_path.stem}_{idx}.png", pnginfo=metadata, compress_level=0)
+                    result.save(edit_save_dir / f"{uuid.uuid4()}.png", pnginfo=metadata, compress_level=0)
             global_i += 1
+
+            
+            print(f"Saving original {im_path.name}")
+            metadata = PngInfo()
+            metadata.add_text("edit_direction", "Original")
+            metadata.add_text("edit_factor", "0")
+            metadata.add_text("computed_lpips", "0")
+            metadata.add_text("computed_l2", "0")
+            metadata.add_text("computed_msssim", "0")
+            edit_save_dir = out_path_results
+            edit_save_dir.mkdir(exist_ok=True, parents=True)
+            input_im = tensor2im(input_batch[i])
+            input_im = input_im.resize((1024, 1024), Image.LANCZOS)
+            for i in range(int(opts.n_iters_per_batch / 2)):
+                input_im.save(edit_save_dir / f"Original:{uuid.uuid4()}.png", pnginfo=metadata, compress_level=0)
 
     #stats_path = opts.output_path / 'stats.txt'
     result_str = f'Runtime {np.mean(global_time):.4f}+-{np.std(global_time):.4f}'
