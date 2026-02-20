@@ -8,11 +8,11 @@ services:
     ports:
       - "3001:3001"
 #    tmpfs:
-#      - /shared
+#      - /workspace/data
     volumes:
       - /dev/bus/usb:/dev/bus/usb
       - ../model:/workspace
-      - ../shared:/workspace/data
+      - ./data:/workspace/data
       - ../results:/workspace/results
       - ./scripts:/workspace/scripts
       - ${HOME}/.android:/root/.android
