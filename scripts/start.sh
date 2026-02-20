@@ -5,7 +5,7 @@ pkill adb
 echo Starting Program...
 
 #Stop the docker container first just in case 😉
-#docker compose down
+docker compose stop
 #Starting the Docker Container
 docker compose up -d
 

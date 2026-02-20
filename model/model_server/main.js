@@ -5,8 +5,10 @@
 const fs = require('fs');
 const path = require('path');
 const exifr = require('exifr');
+const cors = require('cors')
 
 const express = require('express');
+
 const app = express();
 const port = 3001;
 
@@ -17,6 +19,10 @@ const dataDir = path.resolve(__dirname, '..', 'data');
 app.use(express.static(dataDir));
 
 app.use(express.json());
+
+app.use(cors({
+  exposedHeaders: ['X-Image-Filename'], // Critical so your frontend can read this custom header
+}));
 
 let server = app.listen(port, () => {
   console.log(`app listening on port ${port}`)
