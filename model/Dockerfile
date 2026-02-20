@@ -35,6 +35,7 @@ RUN apt update -y && \
 		libxext6 \
 		software-properties-common \
 		locales \
+		exiftran \
 	&& locale-gen en_US.UTF-8 \
 	&& rm -rf /var/lib/apt/lists/*
 

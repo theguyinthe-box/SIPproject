@@ -7,12 +7,12 @@ services:
     privileged: true
     ports:
       - "3001:3001"
-#    tmpfs:
-#      - /workspace/data
+    tmpfs:
+      - /workspace/data
     volumes:
       - /dev/bus/usb:/dev/bus/usb
       - ../model:/workspace
-      - ./data:/workspace/data
+#      - ./model/data:/workspace/data
       - ../results:/workspace/results
       - ./scripts:/workspace/scripts
       - ${HOME}/.android:/root/.android
