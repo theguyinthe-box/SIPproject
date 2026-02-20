@@ -9,9 +9,7 @@ echo Starting Program...
 #Starting the Docker Container
 docker compose up -d
 
-if [ "$1" == "true" ]; then
-    docker exec sips bash /workspace/scripts/get_images.sh
-fi
+docker exec sips bash /workspace/scripts/get_images.sh
 
 docker exec sips bash /workspace/scripts/run_model.sh
 docker exec sips bash /workspace/scripts/start_gui.sh
