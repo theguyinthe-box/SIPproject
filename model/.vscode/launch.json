@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Inference Editing Random",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "inversion/scripts/inference_editing_random.py",
+            "console": "integratedTerminal",
+            "python": "python",
+            "args": [
+                "--output_path", "data/test",
+                "--checkpoint_path", "pretrained_models/restyle_e4e_ffhq.pt",
+                "--data_path", "data/Camera_aligned",
+                "--test_batch_size", "4",
+                "--test_workers", "4",
+                "--n_iters_per_batch", "3",
+                "--edit_directions", "[age,pose,smiling]",
+                "--factor_ranges", "[(-5_5),(-5_5),(-5_5)]",
+                "--landmarks_transforms_path", "data/landmarks_transforms/landmarks_transforms.npy",
+                "--n_edited_images_per_direction", "5"
+            ]
+        }
+    ]
+}

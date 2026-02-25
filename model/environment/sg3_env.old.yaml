@@ -1,0 +1,46 @@
+name: sg3_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex
+  - ca-certificates
+  - certifi
+  - libedit
+  - libffi
+  - libgcc-ng
+  - libstdcxx-ng
+  - ncurses
+  - ninja
+  - openssl
+  - pip
+  - python=3.8
+  - python_abi
+  - readline
+  - setuptools
+  - sqlite
+  - tk
+  - wheel
+  - xz
+  - zlib
+  - cudatoolkit
+  - pip:
+    - scipy
+    - matplotlib
+    - tqdm
+    - numpy
+    - opencv-python
+    - pillow
+    - tensorboard
+    - torch
+    - torchvision
+    - scikit-learn
+    - imageio
+    - imageio-ffmpeg
+    - dataclasses
+    - dlib
+    - ftfy
+    - gdown
+    - defusedxml
+    - pyrallis
+prefix: ~/anaconda3/envs/sg3_env
