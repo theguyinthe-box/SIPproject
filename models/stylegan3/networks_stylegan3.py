@@ -477,7 +477,7 @@ class SynthesisNetwork(torch.nn.Module):
             # Execute layers.
             x = self.input(ws[0])
             for name, w in zip(self.layer_names, ws[1:]):
-                x = getattr(self, name)(x, w, **layer_kwargs)
+                x = getattr(self, name)(x, w.to(torch.float16), **layer_kwargs)
         else:
             t = all_s['input']
             x = self.input(None, t=t)

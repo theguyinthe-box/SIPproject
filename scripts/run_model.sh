@@ -20,14 +20,14 @@ time python prepare_data/compute_landmarks_transforms.py \
 #Run the the model with their edit image script
 time LANG=en_US.utf8 python inversion/scripts/inference_editing_random.py \
 --output_path data/test \
---checkpoint_path pretrained_models/restyle_pSp_ffhq.pt \
+--checkpoint_path pretrained_models/restyle_e4e_ffhq.pt \
 --data_path data/Camera_aligned \
 --test_batch_size 4 \
 --test_workers 4 \
 --n_iters_per_batch 3 \
---edit_directions "[age,pose,smiling]" \
---factor_ranges "[(-5_5),(-5_5),(-5_5)]" \
+--edit_directions '[age,pose,smiling]' \
+--factor_ranges '[(-5_5),(-5_5),(-5_5)]' \
 --landmarks_transforms_path data/landmarks_transforms/landmarks_transforms.npy \
---n_edited_images_per_direction 10
+--n_edited_images_per_direction 5
 
 echo "Time taken: $(( SECONDS - START_TIME )) seconds"
