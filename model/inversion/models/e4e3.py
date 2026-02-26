@@ -71,7 +71,7 @@ class e4e(nn.Module):
         # generate the unaligned image using the user-specified transforms
         if landmarks_transform is not None:
             self.decoder.synthesis.input.transform = landmarks_transform.float()   # size: [batch_size, 3, 3]
-            unaligned_images = self.decoder.synthesis(codes, noise_mode='const', force_fp32=True)
+            unaligned_images = self.decoder.synthesis(codes, noise_mode='const', force_fp32=False)
             if resize:
                 unaligned_images = self.face_pool(unaligned_images)
 
