@@ -60,7 +60,7 @@ def get_average_image(net):
     avg_image = net(net.latent_avg.repeat(16, 1).unsqueeze(0).cuda(),
                     input_code=True,
                     return_latents=False)[0]
-    avg_image = avg_image.to('cuda').float().detach()
+    avg_image = avg_image.float().detach()
     return avg_image
 
 
