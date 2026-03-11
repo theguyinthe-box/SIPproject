@@ -122,8 +122,8 @@ def run(test_opts: TestOptions):
             edit_save_dir.mkdir(exist_ok=True, parents=True)
             input_im = tensor2im(input_batch[i])
             input_im = input_im.resize((1024, 1024), Image.LANCZOS)
-            for i in range(int(opts.n_iters_per_batch / 2)):
-                input_im.save(edit_save_dir / f"Original:{uuid.uuid4()}.png", pnginfo=metadata, compress_level=0)
+            for i in range(int(opts.n_iters_per_batch)):
+                input_im.save(edit_save_dir / f"{uuid.uuid4()}.png", pnginfo=metadata, compress_level=0)
 
     #stats_path = opts.output_path / 'stats.txt'
     result_str = f'Runtime {np.mean(global_time):.4f}+-{np.std(global_time):.4f}'
