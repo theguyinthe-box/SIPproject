@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Could you tell that I am not a web developer :P -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  </head>
+
+<body>
+    <form id="questions-container" class="questionnaire">
+    </form>
+</body>
+
+<script>
+
+window.onload = async function () {
+    
+    //Answers scores are reverse order based on what answer is put in
+    const questions = [
+        {question: "Are you worried about how you look?", Answers: ["Yes", "No"]},
+        {question: "Do you think about your appearance problems a lot and wish you could think about them less?", Answers: ["Yes", "No"]},
+        {question: "Is your main concern with how you look that you aren't thin enough or that you might get too fat?", Answers: ["Yes", "No"]},
+        {question: "Has this problem with how you look affected your life?", Answers: ["Yes", "No"]},
+        {question: "Has it often upset you a lot?", Answers: ["Yes", "No"]},
+        {question: "Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?", Answers: ["Yes", "No"]},
+        {question: "Has it caused you any problems with school, work, or other activities?", Answers: ["Yes", "No"]},
+        {question: "Are there things you avoid because of how you look?", Answers: ["Yes", "No"]},
+        {question: "On an average day, how much time do you usually spend thinking about how you look?", Answers: ["More Than Three Hours", "One to Three Hours", "Less Than One Hour"]}
+    ]
+
+    const container = document.getElementById('questions-container');
+    questions.forEach((q, i) => {
+        const fieldset = container.appendChild(document.createElement("fieldset"));
+        
+
+        const legend = fieldset.appendChild(document.createElement("legend"));
+        legend.innerText = q.question;
+
+        const div = document.createElement("div");
+        div.style = "margin-bottom: 20px;";
+        
+
+        q.Answers.forEach((answer, j) => {
+            
+            const input = document.createElement("input");
+            const label = document.createElement("label");
+
+            input.type = "radio"
+            input.innerText = answer;
+            input.name = `q${i}`;
+            input.value = q.Answers.length - j - 1;
+            input.required = true;
+
+            label.appendChild(input)
+            label.append(` ${answer}`);
+            label.style = "margin-right: 20px";
+
+            div.appendChild(label)
+        })
+        fieldset.appendChild(div)
+        fieldset.style = "width: 50%"
+    })
+
+
+
+    const btn = container.appendChild(document.createElement("button"));
+    btn.innerText = "submit";
+    btn.classList.add("user_id_button", "waiting");
+
+
+    await waitForServer(2000)
+    btn.classList.remove('waiting');
+
+    btn.addEventListener('click', async (e) => {
+        e.preventDefault()
+        
+        if (!container.checkValidity()) {
+            container.reportValidity();
+            return; 
+        }
+
+
+        let total = 0;
+        const formData = new FormData(container);
+        
+        const results = questions.map((q, i) => {
+            const selection = formData.get(`q${i}`);
+            const val = parseInt(formData.get(`q${i}`)) || 0;
+            total += val;
+            return {
+                label: q.question,
+                selection: q.Answers[q.Answers.length - 1 - val],
+                val : val
+            };
+        })
+
+        await fetch('http://127.0.0.1:3001/questionnaire', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({results, total})
+        });
+        window.location.href = "image_check.html";
+    });
+
+}
+    
+    
+
+</script>

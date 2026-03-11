@@ -95,6 +95,14 @@ html, body {
   height: 100vh;              /* fill screen so centering works */
 }
 
+.questionnaire{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;        /* horizontal centering */
+}
+
+
 .user_id_boxes {
   display: flex;
   gap: 50px;

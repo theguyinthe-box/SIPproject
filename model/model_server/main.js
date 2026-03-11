@@ -12,7 +12,7 @@ const express = require('express');
 const app = express();
 const port = 3001;
 
-let subjectID = null;
+let subjectID = undefined;
 
 const dataDir = path.resolve(__dirname, '..', 'data');
 
@@ -59,6 +59,12 @@ app.post('/subjectID', (req, res) => {
   setupDataFile(this.subjectID);
 })
 
+app.post('/questionnaire', (req, res) => {
+  const answers = req.body;
+  res.json({ success: true, received: answers });
+  writeQuestionnaire(answers);
+})
+
 app.post('/userInput', (req, res) => {
   const { selection, filename, timeTaken} = req.body;
   writeSelection(this.subjectID, selection, path.resolve(dataDir, 'test', filename), timeTaken)
@@ -73,6 +79,33 @@ function getImageFromTestData() {
   files = files.filter(f => !f.startsWith('.'));
   if (files.length === 0) return null;
   return path.resolve(dataDir, 'test', files.random());
+}
+
+async function writeQuestionnaire(responses) {
+  // If file doesn't exist, create it and add headers
+  const filePath = path.resolve(__dirname + "/../results/", subjectID + "-questionnaire.csv");
+  const results = responses.results;
+  const total = responses.total;
+
+  const headerKeys = Object.keys(results[0]);
+  const header = headerKeys.join(',') + "\n";
+  const rows = results.map(row => {
+      return headerKeys.map(key => {
+        let val = row[key];
+        // Wrap strings in quotes to protect commas/special characters
+        if (typeof val === 'string') {
+          return `"${val.replace(/"/g, '""')}"`;
+        }
+        return val;
+      }).join(',');
+    }).join('\n') + "\n";
+  const sum = ",," + total + "\n";
+  
+  console.log(header + rows + sum)
+  
+  deleteFileifExists(filePath)
+  console.log(`Creating new questionnaire file for subject ${subjectID} at ${filePath}`);
+  fs.writeFileSync(filePath, header + rows + sum);
 }
 
 async function setupDataFile(subjectID) {
