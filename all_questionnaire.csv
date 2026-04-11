@@ -1,0 +1,820 @@
+label,selection,val,0255-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,0255-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,0255-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,0255-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,0255-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,0255-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,0255-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0255-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,0255-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,0255-questionnaire.csv 
+,,7,0255-questionnaire.csv 
+label,selection,val,0571-questionnaire.csv 
+"Are you worried about how you look?","No",0,0571-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,0571-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,0571-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,0571-questionnaire.csv 
+"Has it often upset you a lot?","No",0,0571-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,0571-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0571-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,0571-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,0571-questionnaire.csv 
+"What is your gender identity?","Male",2,0571-questionnaire.csv 
+,,3,0571-questionnaire.csv 
+label,selection,val,0649-questionnaire.csv 
+"Are you worried about how you look?","No",0,0649-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,0649-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,0649-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,0649-questionnaire.csv 
+"Has it often upset you a lot?","No",0,0649-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,0649-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0649-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,0649-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,0649-questionnaire.csv 
+"What is your gender identity?","Female",1,0649-questionnaire.csv 
+,,1,0649-questionnaire.csv 
+label,selection,val,0686-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,0686-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,0686-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,0686-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,0686-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,0686-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,0686-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0686-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,0686-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,0686-questionnaire.csv 
+"What is your gender identity?","Female",1,0686-questionnaire.csv 
+,,8,0686-questionnaire.csv 
+label,selection,val,0748-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,0748-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,0748-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,0748-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,0748-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,0748-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,0748-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0748-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,0748-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,0748-questionnaire.csv 
+"What is your gender identity?","Male",2,0748-questionnaire.csv 
+,,10,0748-questionnaire.csv 
+label,selection,val,0834-questionnaire.csv 
+"Are you worried about how you look?","No",0,0834-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,0834-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,0834-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,0834-questionnaire.csv 
+"Has it often upset you a lot?","No",0,0834-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,0834-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0834-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,0834-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,0834-questionnaire.csv 
+"What is your gender identity?","Male",2,0834-questionnaire.csv 
+,,4,0834-questionnaire.csv 
+label,selection,val,0870-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,0870-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,0870-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,0870-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,0870-questionnaire.csv 
+"Has it often upset you a lot?","No",0,0870-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,0870-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,0870-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,0870-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,0870-questionnaire.csv 
+"What is your gender identity?","Female",1,0870-questionnaire.csv 
+,,5,0870-questionnaire.csv 
+label,selection,val,1039-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,1039-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,1039-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,1039-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,1039-questionnaire.csv 
+"Has it often upset you a lot?","No",0,1039-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,1039-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,1039-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,1039-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,1039-questionnaire.csv 
+"What is your gender identity?","Male",2,1039-questionnaire.csv 
+,,5,1039-questionnaire.csv 
+label,selection,val,1168-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,1168-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,1168-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,1168-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,1168-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,1168-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,1168-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,1168-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,1168-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,1168-questionnaire.csv 
+"What is your gender identity?","Female",1,1168-questionnaire.csv 
+,,9,1168-questionnaire.csv 
+label,selection,val,1446-questionnaire.csv 
+"Are you worried about how you look?","No",0,1446-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,1446-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,1446-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,1446-questionnaire.csv 
+"Has it often upset you a lot?","No",0,1446-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,1446-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,1446-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,1446-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,1446-questionnaire.csv 
+"What is your gender identity?","Female",1,1446-questionnaire.csv 
+,,4,1446-questionnaire.csv 
+label,selection,val,1639-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,1639-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,1639-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,1639-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,1639-questionnaire.csv 
+"Has it often upset you a lot?","No",0,1639-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,1639-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,1639-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,1639-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,1639-questionnaire.csv 
+"What is your gender identity?","Male",2,1639-questionnaire.csv 
+,,5,1639-questionnaire.csv 
+label,selection,val,1687-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,1687-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,1687-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,1687-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,1687-questionnaire.csv 
+"Has it often upset you a lot?","No",0,1687-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,1687-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,1687-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,1687-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,1687-questionnaire.csv 
+"What is your gender identity?","Male",2,1687-questionnaire.csv 
+,,3,1687-questionnaire.csv 
+label,selection,val,1747-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,1747-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,1747-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,1747-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,1747-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,1747-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,1747-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,1747-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,1747-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,1747-questionnaire.csv 
+"What is your gender identity?","Female",1,1747-questionnaire.csv 
+,,10,1747-questionnaire.csv 
+label,selection,val,2038-questionnaire.csv 
+"Are you worried about how you look?","No",0,2038-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,2038-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,2038-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,2038-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,2038-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,2038-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,2038-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,2038-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,2038-questionnaire.csv 
+"What is your gender identity?","Female",1,2038-questionnaire.csv 
+,,3,2038-questionnaire.csv 
+label,selection,val,2494-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,2494-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,2494-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,2494-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,2494-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,2494-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,2494-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,2494-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,2494-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,2494-questionnaire.csv 
+"What is your gender identity?","Female",1,2494-questionnaire.csv 
+,,8,2494-questionnaire.csv 
+label,selection,val,2684-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,2684-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,2684-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,2684-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,2684-questionnaire.csv 
+"Has it often upset you a lot?","No",0,2684-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,2684-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,2684-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,2684-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,2684-questionnaire.csv 
+"What is your gender identity?","Female",1,2684-questionnaire.csv 
+,,3,2684-questionnaire.csv 
+label,selection,val,2741-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,2741-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,2741-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,2741-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,2741-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,2741-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,2741-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,2741-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,2741-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,2741-questionnaire.csv 
+,,5,2741-questionnaire.csv 
+label,selection,val,2807-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,2807-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,2807-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,2807-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,2807-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,2807-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,2807-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,2807-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,2807-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","More Than Three Hours",2,2807-questionnaire.csv 
+"What is your gender identity?","Female",1,2807-questionnaire.csv 
+,,11,2807-questionnaire.csv 
+label,selection,val,2904-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,2904-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,2904-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,2904-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,2904-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,2904-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,2904-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,2904-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,2904-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,2904-questionnaire.csv 
+"What is your gender identity?","Female",1,2904-questionnaire.csv 
+,,6,2904-questionnaire.csv 
+label,selection,val,2957-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,2957-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,2957-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,2957-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,2957-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,2957-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,2957-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,2957-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,2957-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","More Than Three Hours",2,2957-questionnaire.csv 
+,,10,2957-questionnaire.csv 
+label,selection,val,3116-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,3116-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,3116-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,3116-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,3116-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,3116-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,3116-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,3116-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,3116-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,3116-questionnaire.csv 
+,,9,3116-questionnaire.csv 
+label,selection,val,3274-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,3274-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,3274-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,3274-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,3274-questionnaire.csv 
+"Has it often upset you a lot?","No",0,3274-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,3274-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,3274-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,3274-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,3274-questionnaire.csv 
+"What is your gender identity?","Male",2,3274-questionnaire.csv 
+,,3,3274-questionnaire.csv 
+label,selection,val,3280-questionnaire.csv 
+"Are you worried about how you look?","No",0,3280-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,3280-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,3280-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,3280-questionnaire.csv 
+"Has it often upset you a lot?","No",0,3280-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,3280-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,3280-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,3280-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,3280-questionnaire.csv 
+"What is your gender identity?","Female",1,3280-questionnaire.csv 
+,,1,3280-questionnaire.csv 
+label,selection,val,3335-questionnaire.csv 
+"Are you worried about how you look?","No",0,3335-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,3335-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,3335-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,3335-questionnaire.csv 
+"Has it often upset you a lot?","No",0,3335-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,3335-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,3335-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,3335-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,3335-questionnaire.csv 
+"What is your gender identity?","Female",1,3335-questionnaire.csv 
+,,3,3335-questionnaire.csv 
+label,selection,val,3339-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,3339-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,3339-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,3339-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,3339-questionnaire.csv 
+"Has it often upset you a lot?","No",0,3339-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,3339-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,3339-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,3339-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,3339-questionnaire.csv 
+"What is your gender identity?","Female",1,3339-questionnaire.csv 
+,,7,3339-questionnaire.csv 
+label,selection,val,3479-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,3479-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,3479-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,3479-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,3479-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,3479-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,3479-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,3479-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,3479-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,3479-questionnaire.csv 
+"What is your gender identity?","Female",1,3479-questionnaire.csv 
+,,5,3479-questionnaire.csv 
+label,selection,val,3568-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,3568-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,3568-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,3568-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,3568-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,3568-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,3568-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,3568-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,3568-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,3568-questionnaire.csv 
+"What is your gender identity?","Female",1,3568-questionnaire.csv 
+,,10,3568-questionnaire.csv 
+label,selection,val,3815-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,3815-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,3815-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,3815-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,3815-questionnaire.csv 
+"Has it often upset you a lot?","No",0,3815-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,3815-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,3815-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,3815-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,3815-questionnaire.csv 
+"What is your gender identity?","Male",2,3815-questionnaire.csv 
+,,3,3815-questionnaire.csv 
+label,selection,val,4311-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,4311-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4311-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,4311-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,4311-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,4311-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,4311-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,4311-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,4311-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,4311-questionnaire.csv 
+"What is your gender identity?","Female",1,4311-questionnaire.csv 
+,,5,4311-questionnaire.csv 
+label,selection,val,4314-questionnaire.csv 
+"Are you worried about how you look?","No",0,4314-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,4314-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,4314-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,4314-questionnaire.csv 
+"Has it often upset you a lot?","No",0,4314-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,4314-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,4314-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,4314-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,4314-questionnaire.csv 
+"What is your gender identity?","Female",1,4314-questionnaire.csv 
+,,2,4314-questionnaire.csv 
+label,selection,val,4379-questionnaire.csv 
+"Are you worried about how you look?","No",0,4379-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4379-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,4379-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,4379-questionnaire.csv 
+"Has it often upset you a lot?","No",0,4379-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,4379-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,4379-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,4379-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,4379-questionnaire.csv 
+"What is your gender identity?","Female",1,4379-questionnaire.csv 
+,,2,4379-questionnaire.csv 
+label,selection,val,4435-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,4435-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4435-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,4435-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,4435-questionnaire.csv 
+"Has it often upset you a lot?","No",0,4435-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,4435-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,4435-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,4435-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,4435-questionnaire.csv 
+"What is your gender identity?","Female",1,4435-questionnaire.csv 
+,,6,4435-questionnaire.csv 
+label,selection,val,4484-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,4484-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4484-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,4484-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,4484-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,4484-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,4484-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,4484-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,4484-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","More Than Three Hours",2,4484-questionnaire.csv 
+"What is your gender identity?","Female",1,4484-questionnaire.csv 
+,,11,4484-questionnaire.csv 
+label,selection,val,4487-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,4487-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4487-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,4487-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,4487-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,4487-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,4487-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,4487-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,4487-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,4487-questionnaire.csv 
+"What is your gender identity?","Female",1,4487-questionnaire.csv 
+,,8,4487-questionnaire.csv 
+label,selection,val,4787-questionnaire.csv 
+"Are you worried about how you look?","No",0,4787-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,4787-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,4787-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,4787-questionnaire.csv 
+"Has it often upset you a lot?","No",0,4787-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,4787-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,4787-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,4787-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,4787-questionnaire.csv 
+"What is your gender identity?","Male",2,4787-questionnaire.csv 
+,,2,4787-questionnaire.csv 
+label,selection,val,4793-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,4793-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4793-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,4793-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,4793-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,4793-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,4793-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","Yes",1,4793-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,4793-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,4793-questionnaire.csv 
+"What is your gender identity?","Female",1,4793-questionnaire.csv 
+,,10,4793-questionnaire.csv 
+label,selection,val,4922-questionnaire.csv 
+"Are you worried about how you look?","No",0,4922-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,4922-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,4922-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,4922-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,4922-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,4922-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,4922-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,4922-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,4922-questionnaire.csv 
+"What is your gender identity?","Female",1,4922-questionnaire.csv 
+,,6,4922-questionnaire.csv 
+label,selection,val,5197-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,5197-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,5197-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,5197-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,5197-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,5197-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,5197-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,5197-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,5197-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","More Than Three Hours",2,5197-questionnaire.csv 
+"What is your gender identity?","Female",1,5197-questionnaire.csv 
+,,10,5197-questionnaire.csv 
+label,selection,val,5251-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,5251-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,5251-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,5251-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,5251-questionnaire.csv 
+"Has it often upset you a lot?","No",0,5251-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,5251-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,5251-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,5251-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,5251-questionnaire.csv 
+"What is your gender identity?","Male",2,5251-questionnaire.csv 
+,,3,5251-questionnaire.csv 
+label,selection,val,5473-questionnaire.csv 
+"Are you worried about how you look?","No",0,5473-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,5473-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,5473-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,5473-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,5473-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,5473-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,5473-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,5473-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,5473-questionnaire.csv 
+"What is your gender identity?","Female",1,5473-questionnaire.csv 
+,,7,5473-questionnaire.csv 
+label,selection,val,5537-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,5537-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,5537-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,5537-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,5537-questionnaire.csv 
+"Has it often upset you a lot?","No",0,5537-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,5537-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,5537-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,5537-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,5537-questionnaire.csv 
+"What is your gender identity?","Female",1,5537-questionnaire.csv 
+,,7,5537-questionnaire.csv 
+label,selection,val,5659-questionnaire.csv 
+"Are you worried about how you look?","No",0,5659-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,5659-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,5659-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,5659-questionnaire.csv 
+"Has it often upset you a lot?","No",0,5659-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,5659-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,5659-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,5659-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,5659-questionnaire.csv 
+"What is your gender identity?","Male",2,5659-questionnaire.csv 
+,,4,5659-questionnaire.csv 
+label,selection,val,5669-questionnaire.csv 
+"Are you worried about how you look?","No",0,5669-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,5669-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,5669-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,5669-questionnaire.csv 
+"Has it often upset you a lot?","No",0,5669-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,5669-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,5669-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,5669-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,5669-questionnaire.csv 
+"What is your gender identity?","Male",2,5669-questionnaire.csv 
+,,3,5669-questionnaire.csv 
+label,selection,val,6029-questionnaire.csv 
+"Are you worried about how you look?","No",0,6029-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,6029-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,6029-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,6029-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,6029-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,6029-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,6029-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,6029-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,6029-questionnaire.csv 
+"What is your gender identity?","Female",1,6029-questionnaire.csv 
+,,7,6029-questionnaire.csv 
+label,selection,val,6518-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,6518-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,6518-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,6518-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,6518-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,6518-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,6518-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,6518-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,6518-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,6518-questionnaire.csv 
+"What is your gender identity?","Female",1,6518-questionnaire.csv 
+,,9,6518-questionnaire.csv 
+label,selection,val,6784-questionnaire.csv 
+"Are you worried about how you look?","No",0,6784-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,6784-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,6784-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,6784-questionnaire.csv 
+"Has it often upset you a lot?","No",0,6784-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,6784-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,6784-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,6784-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,6784-questionnaire.csv 
+"What is your gender identity?","Female",1,6784-questionnaire.csv 
+,,2,6784-questionnaire.csv 
+label,selection,val,6933-questionnaire.csv 
+"Are you worried about how you look?","No",0,6933-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,6933-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,6933-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,6933-questionnaire.csv 
+"Has it often upset you a lot?","No",0,6933-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,6933-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,6933-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,6933-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,6933-questionnaire.csv 
+"What is your gender identity?","Female",1,6933-questionnaire.csv 
+,,1,6933-questionnaire.csv 
+label,selection,val,6943-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,6943-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,6943-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,6943-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,6943-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,6943-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,6943-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,6943-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,6943-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,6943-questionnaire.csv 
+"What is your gender identity?","Female",1,6943-questionnaire.csv 
+,,7,6943-questionnaire.csv 
+label,selection,val,7004-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,7004-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,7004-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,7004-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,7004-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7004-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7004-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7004-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7004-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,7004-questionnaire.csv 
+"What is your gender identity?","Female",1,7004-questionnaire.csv 
+,,6,7004-questionnaire.csv 
+label,selection,val,7093-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,7093-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,7093-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,7093-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,7093-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,7093-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7093-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7093-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7093-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,7093-questionnaire.csv 
+"What is your gender identity?","Female",1,7093-questionnaire.csv 
+,,7,7093-questionnaire.csv 
+label,selection,val,7138-questionnaire.csv 
+"Are you worried about how you look?","No",0,7138-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,7138-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,7138-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,7138-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7138-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7138-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7138-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7138-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,7138-questionnaire.csv 
+,,0,7138-questionnaire.csv 
+label,selection,val,7323-questionnaire.csv 
+"Are you worried about how you look?","No",0,7323-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,7323-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,7323-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,7323-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7323-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7323-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7323-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7323-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,7323-questionnaire.csv 
+"What is your gender identity?","Male",2,7323-questionnaire.csv 
+,,3,7323-questionnaire.csv 
+label,selection,val,7396-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,7396-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,7396-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,7396-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,7396-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7396-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7396-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7396-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7396-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,7396-questionnaire.csv 
+"What is your gender identity?","Female",1,7396-questionnaire.csv 
+,,6,7396-questionnaire.csv 
+label,selection,val,7531-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,7531-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,7531-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,7531-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,7531-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7531-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,7531-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7531-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7531-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,7531-questionnaire.csv 
+"What is your gender identity?","Male",2,7531-questionnaire.csv 
+,,6,7531-questionnaire.csv 
+label,selection,val,7802-questionnaire.csv 
+"Are you worried about how you look?","No",0,7802-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,7802-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,7802-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,7802-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7802-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7802-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7802-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,7802-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,7802-questionnaire.csv 
+,,3,7802-questionnaire.csv 
+label,selection,val,7977-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,7977-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,7977-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,7977-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,7977-questionnaire.csv 
+"Has it often upset you a lot?","No",0,7977-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,7977-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,7977-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,7977-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,7977-questionnaire.csv 
+"What is your gender identity?","Female",1,7977-questionnaire.csv 
+,,5,7977-questionnaire.csv 
+label,selection,val,8003-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,8003-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,8003-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,8003-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,8003-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,8003-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,8003-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8003-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,8003-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,8003-questionnaire.csv 
+,,5,8003-questionnaire.csv 
+label,selection,val,8140-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,8140-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,8140-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,8140-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,8140-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8140-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,8140-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8140-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,8140-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,8140-questionnaire.csv 
+,,3,8140-questionnaire.csv 
+label,selection,val,8227-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,8227-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,8227-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,8227-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,8227-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8227-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,8227-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8227-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,8227-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,8227-questionnaire.csv 
+"What is your gender identity?","Female",1,8227-questionnaire.csv 
+,,5,8227-questionnaire.csv 
+label,selection,val,8367-questionnaire.csv 
+"Are you worried about how you look?","No",0,8367-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,8367-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,8367-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,8367-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8367-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,8367-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8367-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,8367-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,8367-questionnaire.csv 
+"What is your gender identity?","Female",1,8367-questionnaire.csv 
+,,6,8367-questionnaire.csv 
+label,selection,val,8401-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,8401-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,8401-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,8401-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,8401-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8401-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,8401-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8401-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,8401-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,8401-questionnaire.csv 
+"What is your gender identity?","Female",1,8401-questionnaire.csv 
+,,7,8401-questionnaire.csv 
+label,selection,val,8550-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,8550-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,8550-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,8550-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,8550-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8550-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,8550-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8550-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,8550-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,8550-questionnaire.csv 
+"What is your gender identity?","Female",1,8550-questionnaire.csv 
+,,4,8550-questionnaire.csv 
+label,selection,val,8650-questionnaire.csv 
+"Are you worried about how you look?","No",0,8650-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,8650-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,8650-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,8650-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8650-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,8650-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8650-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,8650-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,8650-questionnaire.csv 
+"What is your gender identity?","Female",1,8650-questionnaire.csv 
+,,1,8650-questionnaire.csv 
+label,selection,val,8996-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,8996-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,8996-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,8996-questionnaire.csv 
+"Has this problem with how you look affected your life?","Yes",1,8996-questionnaire.csv 
+"Has it often upset you a lot?","No",0,8996-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,8996-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,8996-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,8996-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,8996-questionnaire.csv 
+"What is your gender identity?","Male",2,8996-questionnaire.csv 
+,,7,8996-questionnaire.csv 
+label,selection,val,9177-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,9177-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,9177-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,9177-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,9177-questionnaire.csv 
+"Has it often upset you a lot?","No",0,9177-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,9177-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,9177-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,9177-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,9177-questionnaire.csv 
+"What is your gender identity?","Female",1,9177-questionnaire.csv 
+,,4,9177-questionnaire.csv 
+label,selection,val,9713-questionnaire.csv 
+"Are you worried about how you look?","No",0,9713-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,9713-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,9713-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,9713-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,9713-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,9713-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,9713-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,9713-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,9713-questionnaire.csv 
+"What is your gender identity?","Female",1,9713-questionnaire.csv 
+,,3,9713-questionnaire.csv 
+label,selection,val,9774-questionnaire.csv 
+"Are you worried about how you look?","No",0,9774-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,9774-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","No",0,9774-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,9774-questionnaire.csv 
+"Has it often upset you a lot?","No",0,9774-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,9774-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,9774-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,9774-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,9774-questionnaire.csv 
+"What is your gender identity?","Female",1,9774-questionnaire.csv 
+,,1,9774-questionnaire.csv 
+label,selection,val,9886-questionnaire.csv 
+"Are you worried about how you look?","No",0,9886-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","No",0,9886-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,9886-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,9886-questionnaire.csv 
+"Has it often upset you a lot?","No",0,9886-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","Yes",1,9886-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,9886-questionnaire.csv 
+"Are there things you avoid because of how you look?","No",0,9886-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","One to Three Hours",1,9886-questionnaire.csv 
+"What is your gender identity?","Female",1,9886-questionnaire.csv 
+,,4,9886-questionnaire.csv 
+label,selection,val,9895-questionnaire.csv 
+"Are you worried about how you look?","Yes",1,9895-questionnaire.csv 
+"Do you think about your appearance problems a lot and wish you could think about them less?","Yes",1,9895-questionnaire.csv 
+"Is your main concern with how you look that you aren't thin enough or that you might get too fat?","Yes",1,9895-questionnaire.csv 
+"Has this problem with how you look affected your life?","No",0,9895-questionnaire.csv 
+"Has it often upset you a lot?","Yes",1,9895-questionnaire.csv 
+"Has it often gotten in the way of doing things with friends, dating, relationships, or social activities?","No",0,9895-questionnaire.csv 
+"Has it caused you any problems with school, work, or other activities?","No",0,9895-questionnaire.csv 
+"Are there things you avoid because of how you look?","Yes",1,9895-questionnaire.csv 
+"On an average day, how much time do you usually spend thinking about how you look?","Less Than One Hour",0,9895-questionnaire.csv 
+"What is your gender identity?","Female",1,9895-questionnaire.csv 
+,,6,9895-questionnaire.csv 
